@@ -18,29 +18,29 @@ La configuración del servicio sshd en linux se encuentra en el archivo de confi
 
 Ejemplo de archivo de configuración: 
 
-      **Port** 22 -> Puerto de escucha
+      Port 22 -> Puerto de escucha
 
-      **ListenAddress** 192.168.1.1 -> IP de conexión
+      ListenAddress 192.168.1.1 -> IP de conexión
 
-      **HostKey** /etc/ssh/ssh_host_key -> Claves privadas ssh 
+      HostKey /etc/ssh/ssh_host_key -> Claves privadas ssh 
 
-      **PermitRootLogin** no -> No permitir que el usuario root se conecte 
+      PermitRootLogin no -> No permitir que el usuario root se conecte 
 
-      **PasswordAuthentication** yes -> Obligar autenticación por password
+      PasswordAuthentication yes -> Obligar autenticación por password
 
-      **PermitEmptyPasswords** no ->  denegar login a usuarios sin password
+      PermitEmptyPasswords no ->  denegar login a usuarios sin password
 
-      **ServerKeyBits** 1024 -> bits de clave RSA generadas al iniciar el servicio
+      ServerKeyBits 1024 -> bits de clave RSA generadas al iniciar el servicio
 
-      **AllowUsers** adr -> usuario/s (separados por comas) admitido para hacer login
+      AllowUsers adr -> usuario/s (separados por comas) admitido para hacer login
 
-      **LoginGraceTime** 600 -> tiempo que el usuario será valido sin haber iniciado en el sistema
+      LoginGraceTime 600 -> tiempo que el usuario será valido sin haber iniciado en el sistema
 
-      **PrintMotd** yes -> Enseñar el mensaje del dia
+      PrintMotd yes -> Enseñar el mensaje del dia
 
-      **Banner** no/ "Filepath/filename.msg" -> Mostrar banner por pantalla al iniciar conexión
+      Banner no/ "Filepath/filename.msg" -> Mostrar banner por pantalla al iniciar conexión
 
-      **MaxSessions** 1 -> Numero maximo de sesiones aceptadas
+      MaxSessions 1 -> Numero maximo de sesiones aceptadas
 ___
 
 ##  TELNET
