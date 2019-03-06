@@ -1,6 +1,6 @@
-#Apuntes Examen Sistemas UF2
+# Apuntes Examen Sistemas UF2
 
-##SSH
+##  SSH
 
 El servicio OpenSSH (**sshd**)  usa por defecto el puerto **22**.
 
@@ -43,7 +43,7 @@ Ejemplo de archivo de configuración:
       MaxSessions 1 -> Numero maximo de sesiones aceptadas
 __
 
-##TELNET
+##  TELNET
 
 El servicio telnet (**telnetd**) usa por defecto el puerto **23**
 
@@ -65,13 +65,13 @@ Para insertar un banner en Telnet hay que añadir el contenido deseado a:
 
 __
 
-##RDP
+##  RDP
 
 El Servicio RDP (**RemoteDesktopProtocol**) 
 
-#Pendiente de edición
+# Pendiente de edición
 __
-##Servidor de impresión (CUPS)
+##  Servidor de impresión (CUPS)
 
 El servidor de impresoras (**cups**) por defecto solo escucha en loopback 127.0.0.1 por el puerto **631** , para habilitar la esucha en otros canales se debe editar el archivo:
 
@@ -94,12 +94,12 @@ Las opciones de impresión de cada usuario se guardan en:
 Las generales o de cada usuario en:
 
 ```
-/etc/cups/looptions
+/etc/cups/lpoptions
 ```
 
 __
 
-#LDAP
+# LDAP
 
 El servicio OpenLDAP (**slapd**) usa por defecto el puerto **389**
 
