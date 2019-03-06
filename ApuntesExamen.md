@@ -41,7 +41,7 @@ Ejemplo de archivo de configuración:
       Banner no/ "Filepath/filename.msg" -> Mostrar banner por pantalla al iniciar conexión
 
       MaxSessions 1 -> Numero maximo de sesiones aceptadas
-__
+___
 
 ##  TELNET
 
@@ -63,14 +63,14 @@ Para insertar un banner en Telnet hay que añadir el contenido deseado a:
 /etc/motd
 ```
 
-__
+___
 
 ##  RDP
 
 El Servicio RDP (**RemoteDesktopProtocol**) 
 
 # Pendiente de edición
-__
+___
 ##  Servidor de impresión (CUPS)
 
 El servidor de impresoras (**cups**) por defecto solo escucha en loopback 127.0.0.1 por el puerto **631** , para habilitar la esucha en otros canales se debe editar el archivo:
@@ -97,7 +97,7 @@ Las generales o de cada usuario en:
 /etc/cups/lpoptions
 ```
 
-__
+___
 
 # LDAP
 
