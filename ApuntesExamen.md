@@ -1,18 +1,19 @@
 #Apuntes Examen Sistemas UF2
 
 ##SSH
+
 El servicio OpenSSH (**sshd**)  usa por defecto el puerto **22**.
 
 Para realizar una conexión a un equipo mediante ssh se utiliza el comando:
 
-```    user@host:port o user@host -p port
+```
+    user@host:port o user@host -p port
 ```
 
 La configuración del servicio sshd en linux se encuentra en el archivo de configuracion:
 
 ```    
 /etc/ssh/sshd_config
-
 ```
 
 Ejemplo de archivo de configuración: 
@@ -67,8 +68,8 @@ __
 ##RDP
 
 El Servicio RDP (**RemoteDesktopProtocol**) 
-#Pendiente de edición
 
+#Pendiente de edición
 __
 ##Servidor de impresión (CUPS)
 
@@ -99,8 +100,8 @@ Las generales o de cada usuario en:
 __
 
 #LDAP
-El servicio OpenLDAP (**slapd**) usa por defecto el puerto **389**
 
+El servicio OpenLDAP (**slapd**) usa por defecto el puerto **389**
 
 Ejemplo de archivo LDIF para declarar unidades organizativas y usuarios
 
