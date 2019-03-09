@@ -107,7 +107,7 @@ Las generales o de cada usuario en:
 
 ___
 
-# LDAP
+## LDAP
 
 El protocolo LDAP usa por defecto el puerto **389/TCP**
 
