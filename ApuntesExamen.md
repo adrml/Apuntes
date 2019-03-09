@@ -59,24 +59,24 @@ telnet -l user host:port
 -/etc/motd ===========> Este archivo de texto contiene un mensaje impreso justo después del login de una sesión telnet
 -/etc/securetty ======> Este archivo contiene el nombre de las terminales alas cuales tiene acceso el usuario root a través de telnet
 -/etc/issue.net ======> Este archivo de texto contiene un mensaje que es impreso justo antes del login de una sesión telnet.Puede contener:
-	|Abreviación	|Explicación	|Comando equivalente	|
-	|---------------|---------------|-----------------------|
-	|**%t**	|Muestra la tty actual	|	|
-	|**%h**	|Muestra el FQDN del servidor o equipo al que te conectas
-	|**%D**	|Muestra el dominio NIS del servidor o equipo al que te conectas
-	|**%d**	|Muestra la hora y fecha actuales
-	|**%s**	|Muestra el nombre del sistema operativo	|uname -s
-	|**%m**	|Muestra el tipo de hardware (arquitectura del procesador)	|uname -i
-	|**%r**	|Muestra la versión del kernel	|uname -r
-	|**%v**	|Muestra la versión del kernel	|uname -v
-	|**%%**	|Muestra el carácter "%"
+	|Abreviación	|Explicación                                                    |Comando equivalente	|
+	|---------------|---------------------------------------------------------------|-----------------------|
+	|**%t**	        |Muestra la tty actual	                                        |                 	|
+	|**%h**	        |Muestra el FQDN del servidor o equipo al que te conectas       |			|
+	|**%D**   	|Muestra el dominio NIS del servidor o equipo al que te conectas|			|
+	|**%d**	        |Muestra la hora y fecha actuales				|			|
+	|**%s**  	|Muestra el nombre del sistema operativo	                |uname -s		|
+	|**%m** 	|Muestra el tipo de hardware (arquitectura del procesador)	|uname -i		|
+	|**%r** 	|Muestra la versión del kernel	                                |uname -r		|
+	|**%v** 	|Muestra la versión del kernel	                                |uname -v		|
+	|**%%** 	|Muestra el carácter "%"                                        |			|
 	
 
-| hola |   |   |   |   |
-|------|---|---|---|---|
-|      |   |   |   |   |
-|      |   |   |   |   |
-|      |   |   |   |   |
+| Abreviación |  Explicación | Comando equivalente  |
+|-------------|--------------|----------------------|
+| **%t** |   |   |   |   |
+| **%h** |   |   |   |   |
+| **%D** |   |   |   |   |
 
 ___
 
