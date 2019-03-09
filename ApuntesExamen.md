@@ -2,7 +2,7 @@
 
 ##  SSH
 
-El servicio OpenSSH (**sshd**)  usa por defecto el puerto **22**.
+El servicio OpenSSH (**sshd**)  usa por defecto el puerto **22/TCP**.
 
 Para realizar una conexión a un equipo mediante ssh se utiliza el comando:
 
@@ -45,7 +45,7 @@ ___
 
 ##  TELNET
 
-El servicio telnet (**telnetd**) usa por defecto el puerto **23**
+El servicio telnet (**telnetd**) usa por defecto el puerto **23/TCP**
 
 Para realizar una conexión a un equipo mediante telnet se utiliza uno de los comandos:
 
@@ -54,22 +54,30 @@ telnet host.local/IP
 ```
 
 ```
-    telnet -l user host:port
+telnet -l user host:port
 ```
+- **/etc/securetty** ====> Este archivo contiene el nombre de las terminales a las cuales tiene acceso el usuario root a través de telnet
+- **/etc/motd** =========> Este archivo de texto contiene un mensaje que es impreso justo después del login de una sesión telnet
+- **/etc/issue.net** ====> Este archivo de texto contiene un mensaje que es impreso justo antes del login de una sesión telnet. Puede contener:
 
-Para insertar un banner en Telnet hay que añadir el contenido deseado a:
-
-```
-/etc/motd
-```
+| Abreviación	| Explicación                                                    | Comando equivalente	|
+|---------------|----------------------------------------------------------------|----------------------|
+|    **%t**     | Muestra la tty actual	                                         |                 	|
+|    **%h**	| Muestra el FQDN del servidor o equipo al que te conectas       | hostname -f		|
+|    **%D**   	| Muestra el dominio NIS del servidor o equipo al que te conectas| hostname -d		|
+|    **%d**	| Muestra la hora y fecha actuales				 |			|
+|    **%s**  	| Muestra el nombre del sistema operativo	                 | uname -s		|
+|    **%m** 	| Muestra el tipo de hardware (arquitectura del procesador)	 | uname -i		|
+|    **%r** 	| Muestra la versión del kernel	                                 | uname -r		|
+|    **%v** 	| Muestra la versión del kernel	                                 | uname -v		|
+|    **%%** 	| Muestra el carácter "%"                                        |			|
 
 ___
 
 ##  RDP
 
 El Servicio RDP (**RemoteDesktopProtocol**) 
-
-# Pendiente de edición
+- Puerto por defecto ===> 3389/TCP
 ___
 ##  Servidor de impresión (CUPS)
 
@@ -99,14 +107,15 @@ Las generales o de cada usuario en:
 
 ___
 
-# LDAP
+## LDAP
 
-El servicio OpenLDAP (**slapd**) usa por defecto el puerto **389**
+El protocolo LDAP usa por defecto el puerto **389/TCP**
+
+El protocolo LDAPS (LDAP+(TLS or SSL)) usa por defecto el puerto **636/TCP**
 
 Ejemplo de archivo LDIF para declarar unidades organizativas y usuarios
 
 	dn: ou=People,dc=example,dc=com
-
 	objectClass: organizationalUnit
 	ou: People
 
