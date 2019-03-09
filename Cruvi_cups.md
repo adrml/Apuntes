@@ -3,7 +3,7 @@
 ##  Servidores de impresión
 
 
-###LPD
+### LPD
 
 **LPD, sistema de impresión Berkeley
 
@@ -12,7 +12,7 @@ Gestor tradicional de UNIX de la plataforma UNIX BSD, controlado por el demonio 
 Utiliza el protocolo **LPD/LPR** donde los clientes se comunican con el demonio mediante el dispositivo /dev/printer y utilizando el archivo de configuración /etc/printcap que determina el directorip de la cola de trabajos de impresión.
 
 
-###LPRng
+### LPRng
 
 
 
