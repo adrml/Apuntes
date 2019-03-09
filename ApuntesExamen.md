@@ -109,12 +109,12 @@ ___
 
 # LDAP
 
-El servicio OpenLDAP (**slapd**) usa por defecto el puerto **389**
+El protocolo LDAP usa por defecto el puerto **389/TCP**
+El protocolo LDAPS (LDAP+(TLS or SSL)) usa por defecto el puerto **636/TCP**
 
 Ejemplo de archivo LDIF para declarar unidades organizativas y usuarios
 
 	dn: ou=People,dc=example,dc=com
-
 	objectClass: organizationalUnit
 	ou: People
 
