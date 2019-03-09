@@ -70,6 +70,13 @@ telnet -l user host:port
 	|**%r**	|Muestra la versión del kernel	|uname -r
 	|**%v**	|Muestra la versión del kernel	|uname -v
 	|**%%**	|Muestra el carácter "%"
+	
+
+| hola |   |   |   |   |
+|------|---|---|---|---|
+|      |   |   |   |   |
+|      |   |   |   |   |
+|      |   |   |   |   |
 
 ___
 
