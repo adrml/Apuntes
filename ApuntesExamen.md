@@ -79,30 +79,126 @@ ___
 El Servicio RDP (**RemoteDesktopProtocol**) 
 - Puerto por defecto ===> 3389/TCP
 ___
-##  Servidor de impresión (CUPS)
+##  Servidores de impresión
 
-El servidor de impresoras (**cups**) por defecto solo escucha en loopback 127.0.0.1 por el puerto **631** , para habilitar la esucha en otros canales se debe editar el archivo:
+**LPD**, sistema de impresión Berkeley
+
+Gestor tradicional de UNIX de la plataforma UNIX BSD, controlado por el demonio de impresoras de linea(Line printer daemon).
+
+Utiliza el protocolo **LPD/LPR** donde los clientes se comunican con el demonio mediante el dispositivo /dev/printer y utilizando el archivo de configuración /etc/printcap que determina el directorip de la cola de trabajos de impresión
+
+
+##CUPS
+
+**CUPS**(common Unix Printing System)
+
+Es el sistema de impresión mas comun en UNIX que utiliza el protocolo **IPP**(Internet Printing protocol)
+ y integra **PostScript** que es uno de los lenguages de definición de paginas estandards.
+
+Archivos de de configuración
+
+- El servidor de impresoras (**cups**) por defecto solo escucha en loopback 127.0.0.1 por el puerto **631** , para habilitar la esucha en otros canales se debe editar el archivo:
 
 ```
 /etc/cups/cupsd.conf
 ```
 
-El panel de configuración web que brinda cups para hacer la mayoria de configuraciones es accesible mediante:
+- El panel de configuración web que brinda cups para hacer la mayoria de configuraciones es accesible mediante:
 
 ```
 https://localhost|serverip:631/admin
 ```
 
-Las opciones de impresión de cada usuario se guardan en:
+- Las opciones de impresión de cada usuario se guardan en:
 
 ```
 ~/.cups/lpoptions
 ```
 
-Las generales o de cada usuario en:
+- Las generales o de cada usuario en:
 
 ```
 /etc/cups/lpoptions
+```
+
+- Definición de impresoras: 
+
+```
+**/etc/cups/printers.conf**
+```
+
+- Archivo **PPD**(PostScript printer description): 
+```
+**/etc/cups/ppd**, contiene las opciones de configuración de la impresora (medida y orientación del papel, resolución, escala..)
+```
+- Clases de impresoras: 
+```
+**/etc/cups/classes.conf**, contiene la lista de las clases de impresoras definidas localmente.
+```
+
+- Tipos MIME: 
+```
+**/etc/cups/mime.types**( o /etc/share/cups/mime/mime.types), indica el tipo de archivos MIME admitidos.
+```
+- Reglas de conversión: 
+```
+**/etc/cups/mime.convs**(o /usr/share/cups/mime/mime.convs) define cual o que filtros estan disponibles para convertir archivos de un formato a otro.
+```
+## Comandos para la gestióm de la impressora
+
+- Listar dispositivos
+
+```
+$ lpinfo -v
+```
+- Listar contraladores
+```
+$ lpinfo -m
+```
+
+- Establecer impresora predeterminada
+
+```
+$ poptions -d <printer>
+```
+
+- Comprobar el estado
+
+```
+$ lpstat -s
+$ lpstat -p <printer>
+```
+
+- Habilitar&Deshabilitar impresora
+
+```
+- cupsenable nombre-impresora
+- cupsdisable nombre-impresora
+```
+
+
+### Comandos basicos de configuración
+
+- Cambiar tamaño margenes
+
+```
+-lpoptions -o page-top=
+-lpoptions -o page-bottom=
+-lpoptions -o page-right=
+-lpoptions -o page-left=
+```
+
+-Cambiar formato pagina
+
+```
+lpoptions -o PageSize= A*
+```
+
+- Limpiar cola de Impresión
+
+```
+$ lprm #Elimina únicamente la última entrada
+$ lprm - #Elimina todas las entradas
 ```
 
 ___
