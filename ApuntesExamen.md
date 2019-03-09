@@ -63,8 +63,8 @@ telnet -l user host:port
 | Abreviación	| Explicación                                                    | Comando equivalente	|
 |---------------|----------------------------------------------------------------|----------------------|
 |    **%t**     | Muestra la tty actual	                                         |                 	|
-|    **%h**	| Muestra el FQDN del servidor o equipo al que te conectas       |			|
-|    **%D**   	| Muestra el dominio NIS del servidor o equipo al que te conectas|			|
+|    **%h**	| Muestra el FQDN del servidor o equipo al que te conectas       | hostname -f		|
+|    **%D**   	| Muestra el dominio NIS del servidor o equipo al que te conectas| hostname -d		|
 |    **%d**	| Muestra la hora y fecha actuales				 |			|
 |    **%s**  	| Muestra el nombre del sistema operativo	                 | uname -s		|
 |    **%m** 	| Muestra el tipo de hardware (arquitectura del procesador)	 | uname -i		|
