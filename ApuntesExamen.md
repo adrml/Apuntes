@@ -2,7 +2,7 @@
 
 ##  SSH
 
-El servicio OpenSSH (**sshd**)  usa por defecto el puerto **22**.
+El servicio OpenSSH (**sshd**)  usa por defecto el puerto **22/TCP**.
 
 Para realizar una conexión a un equipo mediante ssh se utiliza el comando:
 
@@ -45,7 +45,7 @@ ___
 
 ##  TELNET
 
-El servicio telnet (**telnetd**) usa por defecto el puerto **23**
+El servicio telnet (**telnetd**) usa por defecto el puerto **23/TCP**
 
 Para realizar una conexión a un equipo mediante telnet se utiliza uno de los comandos:
 
@@ -77,7 +77,7 @@ ___
 ##  RDP
 
 El Servicio RDP (**RemoteDesktopProtocol**) 
-- Puerto por defecto ===> 3389
+- Puerto por defecto ===> 3389/TCP
 ___
 ##  Servidor de impresión (CUPS)
 
