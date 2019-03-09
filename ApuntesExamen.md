@@ -77,8 +77,7 @@ ___
 ##  RDP
 
 El Servicio RDP (**RemoteDesktopProtocol**) 
-
-# Pendiente de edición
+- Puerto por defecto ===> 3389
 ___
 ##  Servidor de impresión (CUPS)
 
