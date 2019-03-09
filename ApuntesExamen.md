@@ -56,9 +56,9 @@ telnet host.local/IP
 ```
 telnet -l user host:port
 ```
--/etc/motd ===========> Este archivo de texto contiene un mensaje impreso justo después del login de una sesión telnet
--/etc/securetty ======> Este archivo contiene el nombre de las terminales alas cuales tiene acceso el usuario root a través de telnet
--/etc/issue.net ======> Este archivo de texto contiene un mensaje que es impreso justo antes del login de una sesión telnet.Puede contener:
+- **/etc/motd** ===========> Este archivo de texto contiene un mensaje impreso justo después del login de una sesión telnet
+- **/etc/securetty** ======> Este archivo contiene el nombre de las terminales alas cuales tiene acceso el usuario root a través de telnet
+- **/etc/issue.net** ======> Este archivo de texto contiene un mensaje que es impreso justo antes del login de una sesión telnet. Puede contener:
 
 | Abreviación	| Explicación                                                    | Comando equivalente	|
 |---------------|----------------------------------------------------------------|----------------------|
@@ -71,13 +71,6 @@ telnet -l user host:port
 |    **%r** 	| Muestra la versión del kernel	                                 | uname -r		|
 |    **%v** 	| Muestra la versión del kernel	                                 | uname -v		|
 |    **%%** 	| Muestra el carácter "%"                                        |			|
-	
-
-| Abreviación |  Explicación | Comando equivalente  |
-|-------------|--------------|----------------------|
-| **%t** |   |   |   |   |
-| **%h** |   |   |   |   |
-| **%D** |   |   |   |   |
 
 ___
 
