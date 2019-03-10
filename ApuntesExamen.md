@@ -357,6 +357,150 @@ Ejemplo de arbol de directorios para LDAP:
 ![Arbol de directorios](https://www.researchgate.net/profile/Ramon_Anglada_Martinez/publication/262512581/figure/fig1/AS:478136199585792@1491007961309/Figura-1-Ejemplo-de-Arbol-de-Directorio-LDAP-tomada-de-11-OpenLdap-es-una-de-las.png)
 
 
+### SAMBA 4 como AD DC
+
+En este post explicaré como utilizar samba como AD (active directory) y DC (domain controller).
+
+A partir de la versión 4.0 de samba, este, permite usar el servicio de samba como AD DC. Esto se utiliza para conectar clientes Windows a un servidor Linux con samba4.
+
+Podemos realizar las siguientes acciones: Crear, borrar o deshabilitar usuarios y grupos del dominio, podemos crear nuevas unidades organizativas, podemos crear, editar y administrar políticas de dominio o podemos administrar el servicio DNS del dominio samba4.
+
+ 
+
+En mi caso voy a hacer las pruebas con un Ubuntu 18.04 (bionic) y con un windows 10 como cliente.
+
+Lo primero que tenemos que configurar en nuestra maquina es el FQDS, en mi caso es ” server.estamosrodeados.local “.
+
+Tenemos que instalar el servicio de samba, winbind y kerberos.
+
+```
+    sudo apt -y install samba smbclient winbind krb5-config
+```
+
+Al instalar estos servicios nos deberá saltar una ventana con las configuraciones de kerberos. Al poner el FQDN en nuestro equipo, todos o la mayoría de campos deberían estar pre rellenados. Pongo un ejemplo de los siguientes:
+
+![Kerberos1](https://estamosrodeados.com/wp-content/uploads/2019/02/kerberos1.png)
+![Kerberos2](https://estamosrodeados.com/wp-content/uploads/2019/02/kerberos2.png)
+![Kerberos3](https://estamosrodeados.com/wp-content/uploads/2019/02/kerberos3.png)
+
+En el siguiente paso tendremos que configurar samba, para esto tenemos que crear un nuevo fichero de configuración de este servicio. Por si acaso nos equivocamos y queremos volver atrás es recomendable guardar el antiguo fichero de configuración.
+
+```
+    sudo mv /etc/samba/smb.conf /etc/samba/smb.conf.copy
+```
+
+Para crear el nuevo fichero de configuración de samba debemos ejecutar el siguiente comando e introducir los campos demandados.
+
+```
+    cd /etc/samba
+    sudo samba-tool domain provision
+```
+
+    La mayoría de elementos vienen ya pre escogidos, pero para que se vea claro, volveré a escribirlo todo.
+    (Las letras en azul son las que he añadido yo)
+    Realm [ESTAMOSRODEADOS.LOCAL]: ESTAMOSRODEADOS.LOCAL
+    Domain [ESTAMOSRODEADOS]: ESTAMOSRODEADOS
+    Server Role (dc, member, standalone) [dc]: dc
+    DNS backend (SAMBA_INTERNAL, BIND9_FLATFILE, BIND9_DLZ, NONE) [SAMBA_INTERNAL]: SAMBA_INTERNAL
+    DNS forwarder IP address (write ‘none’ to disable forwarding) [10.0.2.3]:127.0.0.53
+```
+    A Kerberos configuration suitable for Samba 4 has been generated at /var/lib/samba/private/krb5.conf
+    Once the above files are installed, your Samba4 server will be ready to use
+    Server Role: active directory domain controller
+    Hostname: server
+    NetBIOS Domain: ESTAMOSRODEADOS
+    DNS Domain: estamosrodeados.local
+    DOMAIN SID: S-1-5-21-2691178573-1269443594-560944578
+```    
+ 
+
+Ahora tenemos que mover el fichero que nos acaba de crear el comando anterior al directorio ” **/etc** “.
+
+```
+    sudo mv /var/lib/samba/private/krb5.conf /etc
+```
+
+Tenemos que ejecutar los siguientes comandos:
+
+```
+    systemctl stop smbd winbind systemd-resolved
+
+    systemctl disable smbd nmbd winbind systemd-resolved
+```
+
+Una vez hecho esto, tenemos que ejecutar lo siguiente:
+
+```
+    systemctl start samba-ad-dc
+
+    systemctl enable samba-ad-dc
+```
+
+Si al ejecutar el comando anterior nos da el siguiente error puedes ir al final de este post donde documento como solucionarlo.
+
+    > root@server:/etc/samba# systemctl start samba-ad-dc
+
+    > Failed to start samba-ad-dc.service: Unit samba-ad-dc.service is masked.
+
+Con esto ya tenemos el controlador de dominio creado y configurado.
+Ahora vamos a crear un nuevo usuario del dominio. En mi caso, este usuario se llama ” pollo “.
+
+```
+    samba-tool user create pollo
+```
+
+Para listar los usuarios creados en nuestro dominio hay que ejecutar el siguiente comando:
+
+``` 
+   samba-tool user list
+```
+
+ 
+
+## Conectar el cliente Windows al AD DC
+
+Para poder conectarnos a nuestro servidor, tenemos que estar en la misma red, es importante poner como DNS la ip del servidor.  ej:
+
+```
+IP servidor: 192.168.57.100
+
+IP cliente: 192.168.57.101
+```
+
+![IPS](https://estamosrodeados.com/wp-content/uploads/2019/02/Cliente-windows-ad-dc.png)
+
+Una vez configurada la red tenemos que seguir los siguientes pasos:
+
+>  Equipo > Propiedades > Cambiar configuración > Cambiar 
+
+Nos aparecerá la ventana en la que tenemos que introducir el dominio al que queremos unirnos.
+
+![dominio](https://estamosrodeados.com/wp-content/uploads/2019/02/cliente-dominio-ad-dc-249x300.png)
+
+Tenemos que introducir la contraseña que hemos configurado antes.
+
+![dominio2](https://estamosrodeados.com/wp-content/uploads/2019/02/dominio-windows-ad-dc3-300x116.png)
+
+Para comprobar que todo funciona correctamente deberíamos acceder al usuario creado anteriormente, en mi caso ” pollo “.
+
+ 
+
+### Errores
+
+Para resolver el error al reiniciar el proceso **samba-ad-dc** hay que ejecutar los siguientes comandos.
+
+>    root@server:/etc/samba# systemctl start samba-ad-dc
+
+>    Failed to start samba-ad-dc.service: Unit samba-ad-dc.service is masked
+
+
+```
+    sudo systemctl unmask samba-ad-dc
+
+    sudo systemctl enable samba-ad-dc
+
+    sudo systemctl restart samba-ad-dc
+```
 
 
 
