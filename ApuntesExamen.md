@@ -227,12 +227,12 @@ El protocolo LDAPS (LDAP+(TLS or SSL)) usa por defecto el puerto **636/TCP**
 		objectClass: organizationalUnit
 		ou: usuarios
 			
-		dn: cn=asix,dc=banderas,dc=org
+		dn: cn=asix,ou=grupos,dc=banderas,dc=org
 		objectClass: posixGroup
 		cn: asix
 		gidNumber: 5000
 	
-		dn: uid=sergi,dc=banderas,dc=org
+		dn: uid=sergi,ou=usuarios,dc=banderas,dc=org
 		objectClass: posixAccount
 		objectClass: shadowAccount
 		objectClass: inetOrgPerson
@@ -246,10 +246,23 @@ El protocolo LDAPS (LDAP+(TLS or SSL)) usa por defecto el puerto **636/TCP**
 		userPassword: Hola123
 		mail: sergi@banderas.org	
 ```
-- Configuramos la contraseña del usuario
-	
-	- Añadimos el usuario al grupo
-	
+```
+		sudo ldapadd -a -c -v -D cn=admin,dc=banderas,dc=org -H ldapi:/// -x -W -f main.ldif
+```
+	- Configuramos la contraseña del usuario
+```
+		ldappasswd -H ldapi:/// -D cn=admin,dc=banderas,dc=org -x -W -S "uid=sergi,ou=usuarios,dc=banderas,dc=org"
+```
+	- Añadimos el usuario al grupo mediante archivo .ldif
+```
+		dn: cn=asix,ou=grupos,dc=banderas,dc=org
+		changetype: modify
+		add: memberUid
+		memberUid: sergi
+```
+```
+		sudo ldapmodify -a -v -D cn=admin,dc=banderas,dc=org -H ldapi:/// -x -W -f addgroupmember.ldif
+```
 3. Comandos de "SLAPD"
 
 Comandos de modificación del dominio LDAP:
