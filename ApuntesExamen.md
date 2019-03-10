@@ -215,7 +215,8 @@ El protocolo LDAPS (LDAP+(TLS or SSL)) usa por defecto el puerto **636/TCP**
 ```
 2. Configuramos usuarios y grupos
 	
-	- Creamos un grupo y un usuario de prueba mediante un archivo .ldif
+- Creamos un grupo y un usuario de prueba mediante un archivo .ldif
+	
 ```
 		dn: ou=grupos,dc=banderas,dc=org
 		objectClass: top
@@ -247,7 +248,7 @@ El protocolo LDAPS (LDAP+(TLS or SSL)) usa por defecto el puerto **636/TCP**
 		mail: sergi@banderas.org	
 ```
 ```
-		sudo ldapadd -a -c -v -D cn=admin,dc=banderas,dc=org -H ldapi:/// -x -W -f main.ldif
+	sudo ldapadd -a -c -v -D cn=admin,dc=banderas,dc=org -H ldapi:/// -x -W -f main.ldif
 ```
 - Configuramos la contraseña del usuario
 ```
