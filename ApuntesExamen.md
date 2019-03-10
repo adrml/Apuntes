@@ -249,11 +249,11 @@ El protocolo LDAPS (LDAP+(TLS or SSL)) usa por defecto el puerto **636/TCP**
 ```
 		sudo ldapadd -a -c -v -D cn=admin,dc=banderas,dc=org -H ldapi:/// -x -W -f main.ldif
 ```
-	- Configuramos la contraseña del usuario
+- Configuramos la contraseña del usuario
 ```
 		ldappasswd -H ldapi:/// -D cn=admin,dc=banderas,dc=org -x -W -S "uid=sergi,ou=usuarios,dc=banderas,dc=org"
 ```
-	- Añadimos el usuario al grupo mediante archivo .ldif
+- Añadimos el usuario al grupo mediante archivo .ldif
 ```
 		dn: cn=asix,ou=grupos,dc=banderas,dc=org
 		changetype: modify
