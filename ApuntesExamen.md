@@ -12,7 +12,7 @@ Para realizar una conexión a un equipo mediante ssh se utiliza el comando:
 Con el siguiente comando podemos ejecutar un programa en modo grafico desde ssh usando los recursos de la otra maquina.
 
 ```
-    user@host:port o user@host -p port
+    $ ssh user@host -X
 ```
 
 La configuración del servicio sshd en linux se encuentra en el archivo de configuracion:
