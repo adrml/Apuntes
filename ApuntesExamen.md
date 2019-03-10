@@ -209,36 +209,20 @@ El protocolo LDAP usa por defecto el puerto **389/TCP**
 
 El protocolo LDAPS (LDAP+(TLS or SSL)) usa por defecto el puerto **636/TCP**
 
-Ejemplo de archivo LDIF para declarar unidades organizativas y usuarios
+1_Instalamos el servicio SLAPD en el servidor, junto con las utilidades ldap
 
-	dn: ou=People,dc=example,dc=com
-	objectClass: organizationalUnit
-	ou: People
+	sudo apt install slapd ldap-utils	
 
-	dn: ou=Groups,dc=example,dc=com
-	objectClass: organizationalUnit
-	ou: Groups
+2_Configuramos usuarios y grupos
+	
+	-Creamos un grupo y un usuario de prueba mediante un archivo .ldif
+	
+	-Configuramos la contraseña del usuario
+	
+	-Añadimos el usuario al grupo
+	
+3_Comandos de "SLAPD"
 
-	dn: cn=miners,ou=Groups,dc=example,dc=com
-	objectClass: posixGroup
-	cn: miners
-	gidNumber: 5000
-
-	dn: uid=john,ou=People,dc=example,dc=com
-	objectClass: inetOrgPerson
-	objectClass: posixAccount
-	objectClass: shadowAccount
-	uid: john
-	sn: Doe
-	givenName: John
-	cn: John Doe
-	displayName: John Doe
-	uidNumber: 10000
-	gidNumber: 5000
-	userPassword: johnldap
-	gecos: John Doe
-	loginShell: /bin/bash
-	homeDirectory: /home/john  
 Comandos de modificación del dominio LDAP:
 
 ```
