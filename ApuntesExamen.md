@@ -9,6 +9,11 @@ Para realizar una conexión a un equipo mediante ssh se utiliza el comando:
 ```
     user@host:port o user@host -p port
 ```
+Con el siguiente comando podemos ejecutar un programa en modo grafico desde ssh usando los recursos de la otra maquina. (redirection X11)
+
+```
+    $ ssh -X user@host
+```
 
 La configuración del servicio sshd en linux se encuentra en el archivo de configuracion:
 
@@ -78,6 +83,9 @@ ___
 
 El Servicio RDP (**RemoteDesktopProtocol**) 
 - Puerto por defecto &rarr; 3389/TCP
+
+RPD es un protocolo diseñado por Windows que permite acceder a un escritorio remoto desde un punto distante, incluso dentro de nuestra propia red, formando un entorno cliente-servidor.
+Se puede acceder a este servicio desde cualquier Windows, Apple, Android, tableta o móvil.
 ___
 ##  Servidores de impresión
 
@@ -356,6 +364,10 @@ Ejemplo de arbol de directorios para LDAP:
 
 ![Arbol de directorios](https://www.researchgate.net/profile/Ramon_Anglada_Martinez/publication/262512581/figure/fig1/AS:478136199585792@1491007961309/Figura-1-Ejemplo-de-Arbol-de-Directorio-LDAP-tomada-de-11-OpenLdap-es-una-de-las.png)
 
+**DN:** Cada entrada tiene un atributo especial llamado distinguished
+name o nombre distinguido (DN), que lo identifica unívocamente en la base de
+datos del directorio. Por tanto, puede decirse que el DN se utiliza para referirse a
+una entrada sin ambigüedades. Es el identificador único de un atributo.
 
 ### SAMBA 4 como AD DC
 
