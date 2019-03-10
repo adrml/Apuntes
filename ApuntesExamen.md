@@ -83,6 +83,9 @@ ___
 
 El Servicio RDP (**RemoteDesktopProtocol**) 
 - Puerto por defecto &rarr; 3389/TCP
+
+RPD es un protocolo diseñado por Windows que permite acceder a un escritorio remoto desde un punto distante, incluso dentro de nuestra propia red, formando un entorno cliente-servidor.
+Se puede acceder a este servicio desde cualquier Windows, Apple, Android, tableta o móvil.
 ___
 ##  Servidores de impresión
 
