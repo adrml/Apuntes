@@ -219,18 +219,18 @@ final.
  Existeixen diverses implementacions del protocol LDAP realitzades per
  diferents companyies, entre d’altres:
 
--   ActiveDirectori &rarr; és la implementació de Microsoft en els seus
+-   ActiveDirectori -> és la implementació de Microsoft en els seus
     sistemes operatius Windows Server.
 
--   RedHatDirectoryServer o 389DirectoryServer &rarr; una implementació
+-   RedHatDirectoryServer o 389DirectoryServer -> una implementació
     realitzada per RedHat/Fedora.
 
--   ApacheDS &rarr; un servei de directori que ofereix l’Apache
+-   ApacheDS -> un servei de directori que ofereix l’Apache
     Software Foundation.
 
--   OpenDS &rarr; una implementació Java del protocol LDAP.
+-   OpenDS -> una implementació Java del protocol LDAP.
 
--   OpenLDAP &rarr; una implementació lliure de l’estàndard.
+-   OpenLDAP -> una implementació lliure de l’estàndard.
 
 Tot i la llibertat d’implementació, el sistema pot caracteritzar-se
 segons algun dels quatre models següents:
