@@ -264,7 +264,12 @@ El protocolo LDAPS (LDAP+(TLS or SSL)) usa por defecto el puerto **636/TCP**
 ```
 		sudo ldapmodify -a -v -D cn=admin,dc=banderas,dc=org -H ldapi:/// -x -W -f addgroupmember.ldif
 ```
-3. Comandos de "SLAPD"
+3. Comandos de "ldap-utils":
+	
+	- ldapadd
+	- ldapdelete
+	- ldappasswd
+	- ldapsearch
 
 Comandos de modificación del dominio LDAP:
 
