@@ -209,6 +209,8 @@ El protocolo LDAP usa por defecto el puerto **389/TCP**
 
 El protocolo LDAPS (LDAP+(TLS or SSL)) usa por defecto el puerto **636/TCP**
 
+### Configuración en el servidor
+
 1. Instalamos el servicio SLAPD en el servidor, junto con las utilidades ldap
 ```
 	sudo apt install slapd ldap-utils	
@@ -248,7 +250,7 @@ El protocolo LDAPS (LDAP+(TLS or SSL)) usa por defecto el puerto **636/TCP**
 		mail: sergi@banderas.org	
 ```
 ```
-	sudo ldapadd -a -c -v -D cn=admin,dc=banderas,dc=org -H ldapi:/// -x -W -f main.ldif
+	sudo ldapadd -a -v -D cn=admin,dc=banderas,dc=org -H ldapi:/// -x -W -f main.ldif
 ```
 - Configuramos la contraseña del usuario
 ```
@@ -267,24 +269,48 @@ El protocolo LDAPS (LDAP+(TLS or SSL)) usa por defecto el puerto **636/TCP**
 3. Comandos de "ldap-utils":
 	
 	- ldapadd
+		- c ======> continua a pesar de producirse errores.
+		- D dn ===> especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
+		- f ldif => especifica el archivo .ldif a usar.
+		- H uri ==> especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
+		- v ======> modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
+		- W ======> se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D".
+		- x ======> usar autenticación simple en vez de SASL.
+		- Ejemplo=====> ldapadd -a -c -D cn=admin,dc=banderas,dc=org -H ldapi:/// -v -W -x -f main.ldif
 	- ldapdelete
+		- D dn ===> especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
+		- H uri ==> especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
+		- v ======> modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
+		- W ======> se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D".
+		- Al final añadimos el dn a eliminar.
+		- Ejemplo=====> ldapdelete -D cn=admin,dc=banderas,dc=org -H ldapi:/// -W "cn=asix,dc=banderas,dc=org"
+	- ldapmodify
+		- D dn ===> especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
+		- f ldif => especifica el archivo .ldif a usar.
+		- H uri ==> especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
+		- v ======> modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
+		- W ======> se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D".
+		- x ======> usar autenticación simple en vez de SASL.
+		- Ejemplo=====> ldapmodify -D cn=admin,dc=banderas,dc=org -H ldapi:/// -v -W -x -f addgroupmember.ldif
 	- ldappasswd
+		- D dn ===> especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
+		- H uri ==> especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
+		- S ======> se usa para que nos pregunte el nuevo password del usuario. 
+		- v ======> modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
+		- W ======> se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D"
+		- x ======> usar autenticación simple en vez de SASL.
 	- ldapsearch
+		- a ======>
+		- c ======>
+		- v ======>
+		- D dn ===>
+		- H uri ==>
+		- x ======>
+		- W ======>
+		- f ======>
+		- v ======>
 
-Comandos de modificación del dominio LDAP:
 
-```
-ldapsearch options|file
-```
-
-```
-ldapmodify options|file
-```
-
-```
-ldapadd options|file
-```
-  
 Ejemplo de arbol de directorios para LDAP:
 
 ![Arbol de directorios](https://www.researchgate.net/profile/Ramon_Anglada_Martinez/publication/262512581/figure/fig1/AS:478136199585792@1491007961309/Figura-1-Ejemplo-de-Arbol-de-Directorio-LDAP-tomada-de-11-OpenLdap-es-una-de-las.png)
