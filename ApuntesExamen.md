@@ -56,9 +56,9 @@ telnet host.local/IP
 ```
 telnet -l user host:port
 ```
-- **/etc/securetty** ====> Este archivo contiene el nombre de las terminales a las cuales tiene acceso el usuario root a través de telnet
-- **/etc/motd** =========> Este archivo de texto contiene un mensaje que es impreso justo después del login de una sesión telnet
-- **/etc/issue.net** ====> Este archivo de texto contiene un mensaje que es impreso justo antes del login de una sesión telnet. Puede contener:
+- **/etc/securetty** &rarr; Este archivo contiene el nombre de las terminales a las cuales tiene acceso el usuario root a través de telnet
+- **/etc/motd** &rarr; Este archivo de texto contiene un mensaje que es impreso justo después del login de una sesión telnet
+- **/etc/issue.net** &rarr; Este archivo de texto contiene un mensaje que es impreso justo antes del login de una sesión telnet. Puede contener:
 
 | Abreviación	| Explicación                                                    | Comando equivalente	|
 |---------------|----------------------------------------------------------------|----------------------|
@@ -77,7 +77,7 @@ ___
 ##  RDP
 
 El Servicio RDP (**RemoteDesktopProtocol**) 
-- Puerto por defecto ===> 3389/TCP
+- Puerto por defecto &rarr; 3389/TCP
 ___
 ##  Servidores de impresión
 
@@ -88,7 +88,7 @@ Gestor tradicional de UNIX de la plataforma UNIX BSD, controlado por el demonio 
 Utiliza el protocolo **LPD/LPR** donde los clientes se comunican con el demonio mediante el dispositivo /dev/printer y utilizando el archivo de configuración /etc/printcap que determina el directorip de la cola de trabajos de impresión
 
 
-##CUPS
+### CUPS
 
 **CUPS**(common Unix Printing System)
 
@@ -129,20 +129,20 @@ https://localhost|serverip:631/admin
 
 - Archivo **PPD**(PostScript printer description): 
 ```
-**/etc/cups/ppd**, contiene las opciones de configuración de la impresora (medida y orientación del papel, resolución, escala..)
+/etc/cups/ppd contiene las opciones de configuración de la impresora (medida y orientación del papel, resolución, escala..)
 ```
 - Clases de impresoras: 
 ```
-**/etc/cups/classes.conf**, contiene la lista de las clases de impresoras definidas localmente.
+/etc/cups/classes.conf contiene la lista de las clases de impresoras definidas localmente.
 ```
 
 - Tipos MIME: 
 ```
-**/etc/cups/mime.types**( o /etc/share/cups/mime/mime.types), indica el tipo de archivos MIME admitidos.
+/etc/cups/mime.types o /etc/share/cups/mime/mime.types), indica el tipo de archivos MIME admitidos.
 ```
 - Reglas de conversión: 
 ```
-**/etc/cups/mime.convs**(o /usr/share/cups/mime/mime.convs) define cual o que filtros estan disponibles para convertir archivos de un formato a otro.
+/etc/cups/mime.convs o /usr/share/cups/mime/mime.convs) define cual o que filtros estan disponibles para convertir archivos de un formato a otro.
 ```
 ## Comandos para la gestióm de la impressora
 
@@ -269,46 +269,46 @@ El protocolo LDAPS (LDAP+(TLS or SSL)) usa por defecto el puerto **636/TCP**
 3. Comandos de "ldap-utils":
 	
 	- ldapadd
-		- c ======> continua a pesar de producirse errores.
-		- D dn ===> especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
-		- f ldif => especifica el archivo .ldif a usar.
-		- H uri ==> especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
-		- v ======> modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
-		- W ======> se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D".
-		- x ======> usar autenticación simple en vez de SASL.
-		- Ejemplo=====> ldapadd -a -c -D cn=admin,dc=banderas,dc=org -H ldapi:/// -v -W -x -f main.ldif
+		- c &rarr; continua a pesar de producirse errores.
+		- D dn &rarr; especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
+		- f ldif &rarr; especifica el archivo .ldif a usar.
+		- H uri &rarr; especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
+		- v &rarr; modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
+		- W &rarr; se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D".
+		- x &rarr; usar autenticación simple en vez de SASL.
+		- Ejemplo &rarr; ldapadd -a -c -D cn=admin,dc=banderas,dc=org -H ldapi:/// -v -W -x -f main.ldif
 	- ldapdelete
-		- D dn ===> especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
-		- H uri ==> especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
-		- v ======> modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
-		- W ======> se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D".
+		- D dn &rarr; especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
+		- H uri &rarr; especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
+		- v &rarr; modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
+		- W &rarr; se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D".
 		- Al final añadimos el dn a eliminar.
-		- Ejemplo=====> ldapdelete -D cn=admin,dc=banderas,dc=org -H ldapi:/// -W "cn=asix,dc=banderas,dc=org"
+		- Ejemplo &rarr; ldapdelete -D cn=admin,dc=banderas,dc=org -H ldapi:/// -W "cn=asix,dc=banderas,dc=org"
 	- ldapmodify
-		- D dn ===> especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
-		- f ldif => especifica el archivo .ldif a usar.
-		- H uri ==> especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
-		- v ======> modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
-		- W ======> se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D".
-		- x ======> usar autenticación simple en vez de SASL.
-		- Ejemplo=====> ldapmodify -D cn=admin,dc=banderas,dc=org -H ldapi:/// -v -W -x -f addgroupmember.ldif
+		- D dn &rarr; especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
+		- f ldif &rarr; especifica el archivo .ldif a usar.
+		- H uri &rarr; especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
+		- v &rarr; modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
+		- W &rarr; se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D".
+		- x &rarr; usar autenticación simple en vez de SASL.
+		- Ejemplo &rarr; ldapmodify -D cn=admin,dc=banderas,dc=org -H ldapi:/// -v -W -x -f addgroupmember.ldif
 	- ldappasswd
-		- D dn ===> especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
-		- H uri ==> especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
-		- S ======> se usa para que nos pregunte el nuevo password del usuario. 
-		- v ======> modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
-		- W ======> se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D"
-		- x ======> usar autenticación simple en vez de SASL.
+		- D dn &rarr; especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
+		- H uri &rarr; especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
+		- S &rarr; se usa para que nos pregunte el nuevo password del usuario. 
+		- v &rarr; modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
+		- W &rarr; se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D"
+		- x &rarr; usar autenticación simple en vez de SASL.
 	- ldapsearch
-		- b dn ===> dn a partir del cual se hará la búsqueda.
+		- b dn &rarr; dn a partir del cual se hará la búsqueda.
 			Por ejemplo: buscar en todo el directorio (-b dc=banderas,dc=org)
-		- D dn ===> especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
-		- H uri ==> especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
-		- v ======> modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
-		- W ======> se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D".
-		- x ======> usar autenticación simple en vez de SASL.
+		- D dn &rarr; especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
+		- H uri &rarr; especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
+		- v &rarr; modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
+		- W &rarr; se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D".
+		- x &rarr; usar autenticación simple en vez de SASL.
 		- Al final se añade el atributo a buscar y filtros si hacen falta.
-		- Ejemplo===> ldapsearch -b dc=banderas,dc=org -D cn=admin,dc=banderas,dc=org -H ldapi:/// -W -x 'uid=sergi' mail 
+		- Ejemplo &rarr; ldapsearch -b dc=banderas,dc=org -D cn=admin,dc=banderas,dc=org -H ldapi:/// -W -x 'uid=sergi' mail 
 			Este ejemplo busca en todo el dominio el mail de los dn cuyo uid sea igual a "sergi".
 
 
