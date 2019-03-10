@@ -144,7 +144,7 @@ https://localhost|serverip:631/admin
 ```
 /etc/cups/mime.convs o /usr/share/cups/mime/mime.convs) define cual o que filtros estan disponibles para convertir archivos de un formato a otro.
 ```
-## Comandos para la gestióm de la impressora
+## Comandos para la gestión de la impresora
 
 - Listar dispositivos
 
@@ -209,7 +209,7 @@ El protocolo LDAP usa por defecto el puerto **389/TCP**
 
 El protocolo LDAPS (LDAP+(TLS or SSL)) usa por defecto el puerto **636/TCP**
 
-### Els models LDAP**
+### Els models LDAP
 
 L’LDAP és un estàndard i no pas un maquinari o programari que es pot
 comprar. El que s’instal·la en l’equip client o servidor és la
@@ -217,23 +217,23 @@ implementació d’aquest protocol; la qüestió de com emmagatzemar o
 tractar les dades es deixa als proveïdors de l’aplicació de la norma
 final.
 
- #### Implementacions del protocol LDAP**
+ #### Implementacions del protocol LDAP
 
  Existeixen diverses implementacions del protocol LDAP realitzades per
  diferents companyies, entre d’altres:
 
--   Active Directori: és la implementació de Microsoft en els seus
+-   **ActiveDirectori** &rarr; és la implementació de Microsoft en els seus
     sistemes operatius Windows Server.
 
--   RedHat Directory Server o 389 Directory Server: una implementació
+-   **RedHatDirectoryServer** o **389DirectoryServer** &rarr; una implementació
     realitzada per RedHat/Fedora.
 
--   ApacheDS: un servei de directori que ofereix l’Apache
+-   **ApacheDS** &rarr; un servei de directori que ofereix l’Apache
     Software Foundation.
 
--   OpenDS: una implementació Java del protocol LDAP.
+-   **OpenDS** &rarr; una implementació Java del protocol LDAP.
 
--   OpenLDAP: una implementació lliure de l’estàndard.
+-   **OpenLDAP** &rarr; una implementació lliure de l’estàndard.
 
 Tot i la llibertat d’implementació, el sistema pot caracteritzar-se
 segons algun dels quatre models següents:
@@ -293,11 +293,11 @@ segons algun dels quatre models següents:
 		mail: sergi@banderas.org	
 ```
 ```
-	sudo ldapadd -a -v -D cn=admin,dc=banderas,dc=org -H ldapi:/// -x -W -f main.ldif
+sudo ldapadd -a -v -D cn=admin,dc=banderas,dc=org -H ldapi:/// -x -W -f main.ldif
 ```
 - Configuramos la contraseña del usuario
 ```
-		ldappasswd -H ldapi:/// -D cn=admin,dc=banderas,dc=org -x -W -S "uid=sergi,ou=usuarios,dc=banderas,dc=org"
+ldappasswd -H ldapi:/// -D cn=admin,dc=banderas,dc=org -x -W -S "uid=sergi,ou=usuarios,dc=banderas,dc=org"
 ```
 - Añadimos el usuario al grupo mediante archivo .ldif
 ```
@@ -307,51 +307,51 @@ segons algun dels quatre models següents:
 		memberUid: sergi
 ```
 ```
-		sudo ldapmodify -a -v -D cn=admin,dc=banderas,dc=org -H ldapi:/// -x -W -f addgroupmember.ldif
+sudo ldapmodify -a -v -D cn=admin,dc=banderas,dc=org -H ldapi:/// -x -W -f addgroupmember.ldif
 ```
 3. Comandos de "ldap-utils":
 	
 	- ldapadd
-		- c &rarr; continua a pesar de producirse errores.
-		- D dn &rarr; especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
-		- f ldif &rarr; especifica el archivo .ldif a usar.
-		- H uri &rarr; especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
-		- v &rarr; modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
-		- W &rarr; se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D".
-		- x &rarr; usar autenticación simple en vez de SASL.
-		- Ejemplo &rarr; ldapadd -a -c -D cn=admin,dc=banderas,dc=org -H ldapi:/// -v -W -x -f main.ldif
+		- c **&rarr;** continua a pesar de producirse errores.
+		- D dn **&rarr;** especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
+		- f ldif **&rarr;** especifica el archivo .ldif a usar.
+		- H uri **&rarr;** especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
+		- v **&rarr;** modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
+		- W **&rarr;** se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D".
+		- x **&rarr;** usar autenticación simple en vez de SASL.
+		- Ejemplo **&rarr;** ldapadd -a -c -D cn=admin,dc=banderas,dc=org -H ldapi:/// -v -W -x -f main.ldif
 	- ldapdelete
-		- D dn &rarr; especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
-		- H uri &rarr; especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
-		- v &rarr; modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
-		- W &rarr; se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D".
+		- D dn **&rarr;** especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
+		- H uri **&rarr;** especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
+		- v **&rarr;** modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
+		- W **&rarr;** se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D".
 		- Al final añadimos el dn a eliminar.
-		- Ejemplo &rarr; ldapdelete -D cn=admin,dc=banderas,dc=org -H ldapi:/// -W "cn=asix,dc=banderas,dc=org"
+		- Ejemplo **&rarr;** ldapdelete -D cn=admin,dc=banderas,dc=org -H ldapi:/// -W "cn=asix,dc=banderas,dc=org"
 	- ldapmodify
-		- D dn &rarr; especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
-		- f ldif &rarr; especifica el archivo .ldif a usar.
-		- H uri &rarr; especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
-		- v &rarr; modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
-		- W &rarr; se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D".
-		- x &rarr; usar autenticación simple en vez de SASL.
-		- Ejemplo &rarr; ldapmodify -D cn=admin,dc=banderas,dc=org -H ldapi:/// -v -W -x -f addgroupmember.ldif
+		- D dn **&rarr;** especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
+		- f ldif **&rarr;** especifica el archivo .ldif a usar.
+		- H uri **&rarr;** especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
+		- v **&rarr;** modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
+		- W **&rarr;** se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D".
+		- x **&rarr;** usar autenticación simple en vez de SASL.
+		- Ejemplo **&rarr;** ldapmodify -D cn=admin,dc=banderas,dc=org -H ldapi:/// -v -W -x -f addgroupmember.ldif
 	- ldappasswd
-		- D dn &rarr; especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
-		- H uri &rarr; especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
-		- S &rarr; se usa para que nos pregunte el nuevo password del usuario. 
-		- v &rarr; modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
-		- W &rarr; se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D"
-		- x &rarr; usar autenticación simple en vez de SASL.
+		- D dn **&rarr;** especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
+		- H uri **&rarr;** especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
+		- S **&rarr;** se usa para que nos pregunte el nuevo password del usuario. 
+		- v **&rarr;** modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
+		- W **&rarr;** se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D"
+		- x **&rarr;** usar autenticación simple en vez de SASL.
 	- ldapsearch
-		- b dn &rarr; dn a partir del cual se hará la búsqueda.
+		- b dn **&rarr;** dn a partir del cual se hará la búsqueda.
 			Por ejemplo: buscar en todo el directorio (-b dc=banderas,dc=org)
-		- D dn &rarr; especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
-		- H uri &rarr; especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
-		- v &rarr; modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
-		- W &rarr; se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D".
-		- x &rarr; usar autenticación simple en vez de SASL.
+		- D dn **&rarr;** especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
+		- H uri **&rarr;** especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
+		- v **&rarr;** modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
+		- W **&rarr;** se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D".
+		- x **&rarr;** usar autenticación simple en vez de SASL.
 		- Al final se añade el atributo a buscar y filtros si hacen falta.
-		- Ejemplo &rarr; ldapsearch -b dc=banderas,dc=org -D cn=admin,dc=banderas,dc=org -H ldapi:/// -W -x 'uid=sergi' mail 
+		- Ejemplo **&rarr;** ldapsearch -b dc=banderas,dc=org -D cn=admin,dc=banderas,dc=org -H ldapi:/// -W -x 'uid=sergi' mail 
 			Este ejemplo busca en todo el dominio el mail de los dn cuyo uid sea igual a "sergi".
 
 
