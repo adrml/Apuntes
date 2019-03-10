@@ -209,19 +209,19 @@ El protocolo LDAP usa por defecto el puerto **389/TCP**
 
 El protocolo LDAPS (LDAP+(TLS or SSL)) usa por defecto el puerto **636/TCP**
 
-1_Instalamos el servicio SLAPD en el servidor, junto con las utilidades ldap
+1. Instalamos el servicio SLAPD en el servidor, junto con las utilidades ldap
 
 	sudo apt install slapd ldap-utils	
 
-2_Configuramos usuarios y grupos
+2. Configuramos usuarios y grupos
 	
-	-Creamos un grupo y un usuario de prueba mediante un archivo .ldif
+	- Creamos un grupo y un usuario de prueba mediante un archivo .ldif
 	
-	-Configuramos la contraseña del usuario
+	- Configuramos la contraseña del usuario
 	
-	-Añadimos el usuario al grupo
+	- Añadimos el usuario al grupo
 	
-3_Comandos de "SLAPD"
+3. Comandos de "SLAPD"
 
 Comandos de modificación del dominio LDAP:
 
