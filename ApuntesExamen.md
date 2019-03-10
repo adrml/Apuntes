@@ -300,15 +300,16 @@ El protocolo LDAPS (LDAP+(TLS or SSL)) usa por defecto el puerto **636/TCP**
 		- W ======> se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D"
 		- x ======> usar autenticación simple en vez de SASL.
 	- ldapsearch
-		- a ======>
-		- c ======>
-		- v ======>
-		- D dn ===>
-		- H uri ==>
-		- x ======>
-		- W ======>
-		- f ======>
-		- v ======>
+		- b dn ===> dn a partir del cual se hará la búsqueda.
+			Por ejemplo: buscar en todo el directorio (-b dc=banderas,dc=org)
+		- D dn ===> especifica el dn del administrador o usuario con privilegios para llevar a cabo la acción.
+		- H uri ==> especifica la uri del servidor LDAP. Si el servidor es localhost se usa "ldapi:///" como uri.
+		- v ======> modo verbose. Si quieres mas detalles usa "-d -1" para el modo debug mostrándolo todo.
+		- W ======> se usa para que nos pregunte el password del usuario al cual corresponde el dn de la opción "-D".
+		- x ======> usar autenticación simple en vez de SASL.
+		- Al final se añade el atributo a buscar y filtros si hacen falta.
+		- Ejemplo===> ldapsearch -b dc=banderas,dc=org -D cn=admin,dc=banderas,dc=org -H ldapi:/// -W -x 'uid=sergi' mail 
+			Este ejemplo busca en todo el dominio el mail de los dn cuyo uid sea igual a "sergi".
 
 
 Ejemplo de arbol de directorios para LDAP:
