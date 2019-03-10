@@ -81,16 +81,13 @@ El Servicio RDP (**RemoteDesktopProtocol**)
 ___
 ##  Servidores de impresión
 
-**LPD**, sistema de impresión Berkeley
+### LPD, sistema de impresión Berkeley
 
 Gestor tradicional de UNIX de la plataforma UNIX BSD, controlado por el demonio de impresoras de linea(Line printer daemon).
 
-Utiliza el protocolo **LPD/LPR** donde los clientes se comunican con el demonio mediante el dispositivo /dev/printer y utilizando el archivo de configuración /etc/printcap que determina el directorip de la cola de trabajos de impresión
+Utiliza el protocolo **LPD/LPR** donde los clientes se comunican con el demonio mediante el dispositivo /dev/printer y utilizando el archivo de configuración **/etc/printcap** que determina el directorip de la cola de trabajos de impresión
 
-
-### CUPS
-
-**CUPS**(common Unix Printing System)
+### CUPS (Common Unix Printing System)
 
 Es el sistema de impresión mas comun en UNIX que utiliza el protocolo **IPP**(Internet Printing protocol)
  y integra **PostScript** que es uno de los lenguages de definición de paginas estandards.
@@ -205,12 +202,12 @@ ___
 
 ## LDAP
 
-El protocolo LDAP usa por defecto el puerto **389/TCP**
+El protocolo **LDAP** usa por defecto el puerto **389/TCP**
 
-El protocolo LDAPS (LDAP+(TLS or SSL)) usa por defecto el puerto **636/TCP**
+El protocolo **LDAPS** (LDAP+(TLS or SSL)) usa por defecto el puerto **636/TCP**
 
 ### Els models LDAP
-
+```
 L’LDAP és un estàndard i no pas un maquinari o programari que es pot
 comprar. El que s’instal·la en l’equip client o servidor és la
 implementació d’aquest protocol; la qüestió de com emmagatzemar o
@@ -250,7 +247,7 @@ segons algun dels quatre models següents:
 4.  El **model de seguretat** descriu com es pot protegir la informació
     continguda en el directori LDAP davant d’intents d’accés
     no autoritzats.
-
+```
 
 ### Configuración en el servidor
 
