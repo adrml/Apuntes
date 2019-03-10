@@ -9,7 +9,7 @@ Para realizar una conexión a un equipo mediante ssh se utiliza el comando:
 ```
     user@host:port o user@host -p port
 ```
-Con el siguiente comando podemos ejecutar un programa en modo grafico desde ssh usando los recursos de la otra maquina.
+Con el siguiente comando podemos ejecutar un programa en modo grafico desde ssh usando los recursos de la otra maquina. (redirection X11)
 
 ```
     $ ssh -X user@host
