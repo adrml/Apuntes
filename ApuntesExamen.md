@@ -206,7 +206,7 @@ El protocolo **LDAP** usa por defecto el puerto **389/TCP**
 
 El protocolo **LDAPS** (LDAP+(TLS or SSL)) usa por defecto el puerto **636/TCP**
 
-### Els models LDAP
+### Els models LDAP(En catalán!)
 ```
 L’LDAP és un estàndard i no pas un maquinari o programari que es pot
 comprar. El que s’instal·la en l’equip client o servidor és la
@@ -219,32 +219,32 @@ final.
  Existeixen diverses implementacions del protocol LDAP realitzades per
  diferents companyies, entre d’altres:
 
--   **ActiveDirectori** &rarr; és la implementació de Microsoft en els seus
+-   ActiveDirectori &rarr; és la implementació de Microsoft en els seus
     sistemes operatius Windows Server.
 
--   **RedHatDirectoryServer** o **389DirectoryServer** &rarr; una implementació
+-   RedHatDirectoryServer o 389DirectoryServer &rarr; una implementació
     realitzada per RedHat/Fedora.
 
--   **ApacheDS** &rarr; un servei de directori que ofereix l’Apache
+-   ApacheDS &rarr; un servei de directori que ofereix l’Apache
     Software Foundation.
 
--   **OpenDS** &rarr; una implementació Java del protocol LDAP.
+-   OpenDS &rarr; una implementació Java del protocol LDAP.
 
--   **OpenLDAP** &rarr; una implementació lliure de l’estàndard.
+-   OpenLDAP &rarr; una implementació lliure de l’estàndard.
 
 Tot i la llibertat d’implementació, el sistema pot caracteritzar-se
 segons algun dels quatre models següents:
 
-1.  El **model d’informació** descriu l’estructura de la informació
+1.  El model d’informació descriu l’estructura de la informació
     emmagatze-mada en el directori LDAP.
 
-2.  El **model de noms** descriu com s’organitza i identifica la
+2.  El model de noms descriu com s’organitza i identifica la
     informació en el directori LDAP.
 
-3.  El **model funcional** descriu quines operacions poden ser
+3.  El model funcional descriu quines operacions poden ser
     realitzades amb la informació emmagatzemada en el directori LDAP.
 
-4.  El **model de seguretat** descriu com es pot protegir la informació
+4.  El model de seguretat descriu com es pot protegir la informació
     continguda en el directori LDAP davant d’intents d’accés
     no autoritzats.
 ```
