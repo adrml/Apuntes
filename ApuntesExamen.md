@@ -700,8 +700,6 @@ para montar el directorio en tu maquina
 
 [ApuntesJoanDaustria_p5](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133912)
 
-[Samba ioc](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133910)
-
 [Ldap ioc](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133911)
 
 [Documentacion ubuntu ldap](https://help.ubuntu.com/lts/serverguide/openldap-server.html.en)
