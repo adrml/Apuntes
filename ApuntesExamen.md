@@ -301,34 +301,34 @@ segons algun dels quatre models següents:
 - Creamos un grupo y un usuario de prueba mediante un archivo .ldif
 	
 ```
-		dn: ou=grupos,dc=banderas,dc=org
-		objectClass: top
-		objectClass: organizationalUnit
-		ou: grupos
-			
-		dn: ou=usuarios,dc=banderas,dc=org
-		objectClass: top
-		objectClass: organizationalUnit
-		ou: usuarios
-			
-		dn: cn=asix,ou=grupos,dc=banderas,dc=org
-		objectClass: posixGroup
-		cn: asix
-		gidNumber: 5000
-	
-		dn: uid=sergi,ou=usuarios,dc=banderas,dc=org
-		objectClass: posixAccount
-		objectClass: shadowAccount
-		objectClass: inetOrgPerson
-		uid: sergi
-		cn: sergi
-		sn: banderas
-		uidNumber: 5000
-		gidNumber: 5000
-		homeDirectory: /home/sergi
-		loginShell: /bin/bash
-		userPassword: Hola123
-		mail: sergi@banderas.org	
+dn: ou=usuarios,dc=asix,dc=local
+objectClass: organizationalUnit
+ou: usuarios
+
+dn: ou=grupos,dc=asix,dc=local
+objectClass: organizationalUnit
+ou: grupos
+
+dn: cn=clase,ou=grupos,dc=asix,dc=local
+objectClass: posixGroup
+cn: clase
+gidNumber: 5000
+
+dn: uid=hector,ou=usuarios,dc=asix,dc=local
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: hector
+sn: martinez
+givenName: hector
+cn: hector martinez
+displayName: hector martinez
+uidNumber: 10000
+gidNumber: 5000
+userPassword: hector
+gecos: hector martinez
+loginShell: /bin/bash
+homeDirectory: /home/hector
 ```
 ```
 sudo ldapadd -a -v -D cn=admin,dc=banderas,dc=org -H ldapi:/// -x -W -f main.ldif
