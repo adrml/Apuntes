@@ -694,13 +694,11 @@ para montar el directorio en tu maquina
 
 ## Documentacion
 
-[ApuntesJoanDaustria_p1_p2_p3](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=126708)
+[ApuntesJoanDaustria_p1_p2_p3 (Impresion y remoto)](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=126708)
 
-[ApuntesJoanDaustria_p4](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133910)
+[ApuntesJoanDaustria_p4 (Samba)](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133910)
 
-[ApuntesJoanDaustria_p5](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133912)
-
-[Ldap ioc](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133911)
+[ApuntesJoanDaustria_p5 (ldap)](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133911)
 
 [Documentacion ubuntu ldap](https://help.ubuntu.com/lts/serverguide/openldap-server.html.en)
 
