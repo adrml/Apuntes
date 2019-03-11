@@ -554,13 +554,58 @@ Para resolver el error al reiniciar el proceso **samba-ad-dc** hay que ejecutar 
 ```
 ***https://estamosrodeados.com/linux/samba4-como-ad-dc/***
 
+
 ## Conectar el cliente Ubuntu al AD DC
 
 Primero instalamos los siguientes servicios.
 
 ```
-	apt -y install winbind libpam-winbind libnss-winbind krb5-config resolvconf
+apt -y install winbind libpam-winbind libnss-winbind krb5-config resolvconf
 ```
+
+Añadiremos lo siguiente al fichero /etc/samba/smb.conf
+
+```
+   workgroup = FD3S01
+   password server = fd3s.srv.world
+   realm = SRV.WORLD
+   security = ads
+   idmap config * : range = 16777216-33554431
+   template homedir = /home/%U
+   template shell = /bin/bash
+   winbind use default domain = true
+   winbind offline logon = false
+   winbind rpc only = yes
+
+```
+También el fichero /etc/nsswitch.conf
+```
+passwd:     compat winbind
+group:     compat winbind
+shadow:     compat winbind
+
+```
+Y por último el fichero /etc/pam.d/common-session
+```
+session optional        pam_mkhomedir.so skel=/etc/skel umask=077
+```
+Para acceder al active directory
+```
+net ads join -U Administrator **(en caso de tenerlo en castellano serà Administrador)**
+```
+Para comprobar que funciona hacemos:
+```
+service winbind restart
+
+wbinfo -u
+```
+Con el anterior comando veremos un listado de los usuarios que tenemos en el AD DC, si salen los usuarios quiere decir que funciona, si no sale nada quiere decir que no se ha unido bien.
+
+Si todo ha salido bien podremos acceder con un usuario de nuestro active directory, en este caso yo he usado el usuario “pollo”.
+```
+su pollo
+```
+***https://www.server-world.info/en/note?os=Debian_9&p=samba&f=3***
 
 
 ## SAMBA
