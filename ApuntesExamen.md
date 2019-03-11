@@ -25,6 +25,8 @@
 
 7.1 [AccederARecursos](#AccederARecursos)
 
+8. [Documentacion](#Documentacion)
+
 ## SSH <a name="SSH"></a>
 
 El servicio OpenSSH (**sshd**)  usa por defecto el puerto **22/TCP**.
@@ -689,13 +691,13 @@ para montar el directorio en tu maquina
 
 ```smbstatus``` Nos permite ver quien está conectado al servidor Samba.
 
-## Documentación
+## Documentacion
 
-Impresiín y remoto
-https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=126708
+Impresion y remoto
+[ApuntesJoanDaustria_p1_p2_p3](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=126708)
 
 Samba
-https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133910
+[ApuntesJoanDaustria_p4](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133910)
 
 Ldap
-https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133911
+[ApuntesJoanDaustria_p5](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133912)
