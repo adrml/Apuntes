@@ -694,24 +694,18 @@ para montar el directorio en tu maquina
 
 ## Documentacion
 
-<<<<<<< HEAD
-Impresion y remoto
 [ApuntesJoanDaustria_p1_p2_p3](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=126708)
 
-Samba
 [ApuntesJoanDaustria_p4](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133910)
 
-Ldap
 [ApuntesJoanDaustria_p5](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133912)
-
-[Impresion y remoto ioc](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=126708)
 
 [Samba ioc](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133910)
 
 [Ldap ioc](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133911)
 
-[Documentacion ubuntu ldap:](https://help.ubuntu.com/lts/serverguide/openldap-server.html.en)
+[Documentacion ubuntu ldap](https://help.ubuntu.com/lts/serverguide/openldap-server.html.en)
 
-[conf cliente ubuntu:](https://www.tecmint.com/configure-ldap-client-to-connect-external-authentication/)
+[conf cliente ubuntu](https://www.tecmint.com/configure-ldap-client-to-connect-external-authentication/)
 
-[samba con ad dc:](https://estamosrodeados.com/linux/samba4-como-ad-dc/)
+[samba con ad dc](https://estamosrodeados.com/linux/samba4-como-ad-dc/)
