@@ -16,7 +16,7 @@
 
 5.1. [Config servidor](#Config servidor)
 
-6. [SAMBA 4 como AD DC](#SAMBA 4 ADDC)
+6. [SAMBA 4](#SAMBA 4)
 
 6.1. [Errores](#Errores)
 
@@ -397,7 +397,7 @@ name o nombre distinguido (DN), que lo identifica unívocamente en la base de
 datos del directorio. Por tanto, puede decirse que el DN se utiliza para referirse a
 una entrada sin ambigüedades. Es el identificador único de un atributo.
 
-### SAMBA 4 ADDC <a name="SAMBA 4 ADDC"></a>
+### SAMBA 4 <a name="SAMBA 4"></a>
 
 En este post explicaré como utilizar samba como AD (active directory) y DC (domain controller).
 
