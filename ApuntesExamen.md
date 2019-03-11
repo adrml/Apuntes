@@ -121,7 +121,9 @@ Gestor tradicional de UNIX de la plataforma UNIX BSD, controlado por el demonio 
 
 Utiliza el protocolo **LPD/LPR** donde los clientes se comunican con el demonio mediante el dispositivo /dev/printer y utilizando el archivo de configuración **/etc/printcap** que determina el directorip de la cola de trabajos de impresión
 
-### CUPS (Common Unix Printing System)
+### CUPS 
+
+**Common Unix Printing System**
 
 Es el sistema de impresión mas comun en UNIX que utiliza el protocolo **IPP**(Internet Printing protocol)
  y integra **PostScript** que es uno de los lenguages de definición de paginas estandards.
