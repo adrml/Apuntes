@@ -301,34 +301,34 @@ segons algun dels quatre models següents:
 - Creamos un grupo y un usuario de prueba mediante un archivo .ldif
 	
 ```
-		dn: ou=grupos,dc=banderas,dc=org
-		objectClass: top
-		objectClass: organizationalUnit
-		ou: grupos
-			
-		dn: ou=usuarios,dc=banderas,dc=org
-		objectClass: top
-		objectClass: organizationalUnit
-		ou: usuarios
-			
-		dn: cn=asix,ou=grupos,dc=banderas,dc=org
-		objectClass: posixGroup
-		cn: asix
-		gidNumber: 5000
-	
-		dn: uid=sergi,ou=usuarios,dc=banderas,dc=org
-		objectClass: posixAccount
-		objectClass: shadowAccount
-		objectClass: inetOrgPerson
-		uid: sergi
-		cn: sergi
-		sn: banderas
-		uidNumber: 5000
-		gidNumber: 5000
-		homeDirectory: /home/sergi
-		loginShell: /bin/bash
-		userPassword: Hola123
-		mail: sergi@banderas.org	
+dn: ou=usuarios,dc=asix,dc=local
+objectClass: organizationalUnit
+ou: usuarios
+
+dn: ou=grupos,dc=asix,dc=local
+objectClass: organizationalUnit
+ou: grupos
+
+dn: cn=clase,ou=grupos,dc=asix,dc=local
+objectClass: posixGroup
+cn: clase
+gidNumber: 5000
+
+dn: uid=hector,ou=usuarios,dc=asix,dc=local
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: hector
+sn: martinez
+givenName: hector
+cn: hector martinez
+displayName: hector martinez
+uidNumber: 10000
+gidNumber: 5000
+userPassword: hector
+gecos: hector martinez
+loginShell: /bin/bash
+homeDirectory: /home/hector
 ```
 ```
 sudo ldapadd -a -v -D cn=admin,dc=banderas,dc=org -H ldapi:/// -x -W -f main.ldif
@@ -396,6 +396,8 @@ sudo ldapmodify -a -v -D cn=admin,dc=banderas,dc=org -H ldapi:/// -x -W -f addgr
 Ejemplo de arbol de directorios para LDAP:
 
 ![Arbol de directorios](https://www.researchgate.net/profile/Ramon_Anglada_Martinez/publication/262512581/figure/fig1/AS:478136199585792@1491007961309/Figura-1-Ejemplo-de-Arbol-de-Directorio-LDAP-tomada-de-11-OpenLdap-es-una-de-las.png)
+
+***https://help.ubuntu.com/lts/serverguide/openldap-server.html.en***
 
 **DN:** Cada entrada tiene un atributo especial llamado distinguished
 name o nombre distinguido (DN), que lo identifica unívocamente en la base de
@@ -546,6 +548,7 @@ Para resolver el error al reiniciar el proceso **samba-ad-dc** hay que ejecutar 
 
     sudo systemctl restart samba-ad-dc
 ```
+***https://estamosrodeados.com/linux/samba4-como-ad-dc/***
 
 ## SAMBA
 
