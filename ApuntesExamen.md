@@ -4,7 +4,7 @@
 1. [SSH](#SSH)
 2. [Telnet](#TELNET)
 3. [RDP](#RDP)
-4. [Servidores de impresion](#Servidores de impresion)
+4. [Servidores de impresion](#ServidoresImpresion)
 
 4.1. [LPD](#LPD)
 
@@ -14,9 +14,9 @@
 
 5. [LDAP](#LDAP)
 
-5.1. [Config servidor](#Config servidor)
+5.1. [Config servidor](#ConfigServidor)
 
-6. [SAMBA 4](#SAMBA 4)
+6. [SAMBA 4](#SAMBA4)
 
 6.1. [Errores](#Errores)
 
@@ -108,7 +108,7 @@ El Servicio RDP (**RemoteDesktopProtocol**)
 RPD es un protocolo diseñado por Windows que permite acceder a un escritorio remoto desde un punto distante, incluso dentro de nuestra propia red, formando un entorno cliente-servidor.
 Se puede acceder a este servicio desde cualquier Windows, Apple, Android, tableta o móvil.
 ___
-##  Servidores de impresion <a name="Servidores de impresión"></a>
+##  ServidoresImpresion <a name="ServidoresImpresion"></a>
 
 ### LPD 
 
@@ -285,7 +285,7 @@ segons algun dels quatre models següents:
     no autoritzats.
 ```
 
-### Config servidor   <a name="Config servidor"></a>
+### ConfigServidor   <a name="ConfigServidor"></a>
 
 1. Instalamos el servicio SLAPD en el servidor, junto con las utilidades ldap
 ```
@@ -397,7 +397,7 @@ name o nombre distinguido (DN), que lo identifica unívocamente en la base de
 datos del directorio. Por tanto, puede decirse que el DN se utiliza para referirse a
 una entrada sin ambigüedades. Es el identificador único de un atributo.
 
-### SAMBA 4 <a name="SAMBA 4"></a>
+### SAMBA4 <a name="SAMBA4"></a>
 
 En este post explicaré como utilizar samba como AD (active directory) y DC (domain controller).
 
