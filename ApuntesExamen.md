@@ -288,7 +288,6 @@ segons algun dels quatre models següents:
     continguda en el directori LDAP davant d’intents d’accés
     no autoritzats.
 ```
-***https://help.ubuntu.com/lts/serverguide/openldap-server.html.en***
 
 ### ConfigServidor   <a name="ConfigServidor"></a>
 
@@ -397,6 +396,8 @@ sudo ldapmodify -a -v -D cn=admin,dc=banderas,dc=org -H ldapi:/// -x -W -f addgr
 Ejemplo de arbol de directorios para LDAP:
 
 ![Arbol de directorios](https://www.researchgate.net/profile/Ramon_Anglada_Martinez/publication/262512581/figure/fig1/AS:478136199585792@1491007961309/Figura-1-Ejemplo-de-Arbol-de-Directorio-LDAP-tomada-de-11-OpenLdap-es-una-de-las.png)
+
+***https://help.ubuntu.com/lts/serverguide/openldap-server.html.en***
 
 **DN:** Cada entrada tiene un atributo especial llamado distinguished
 name o nombre distinguido (DN), que lo identifica unívocamente en la base de
