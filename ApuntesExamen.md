@@ -604,22 +604,27 @@ Para acceder a los recursos compartidos por Windows, si usamos Konqueror o Nauti
 
 De todos modos, disponemos también de **herramientas gráficas** que van muy bien y hacen esta tarea tan sencilla como navegar por directorios. Algunas de ellas son:
 
-    **komba**
-    **smb4k**
-    **xfsamba**
+> komba
+> smb4k
+> xfsamba
 
-También podemos utilizar la **línea de comandos** de la siguiente manera```
+También podemos utilizar la **línea de comandos** de la siguiente manera
 
 ```smbclient -L <host>``` Nos muestra los recursos compartidos en el equipo. Podemos especificar el usuario (la contraseña la preguntará) con ```smbclient -L <host> -U <usuario>```
 
-```smbmount //host/nombredelrecurso /mnt/samba```Nos montara el recurso compartido llamado nombredelrecurso en el directorio /mnt/samba. 
-Antes de hacer esto, el directorio /mnt/samba debe existir. Una vez montado podremos navegar por /mnt/samba como si fuera el directorio compartido de windows. 
-Para especificar el nombre de usuario usaremos: ```smbmount //host/nombredelrecurso /mnt/samba -o username=<usuario>```
+```smbmount //host/nombredelrecurso /mnt/samba``` &rarr; Nos montara el recurso compartido llamado nombredelrecurso en el directorio /mnt/samba. 
+Antes de hacer esto, el directorio /mnt/samba debe existir.
+
+Una vez montado podremos navegar por **/mnt/samba** como si fuera el directorio compartido de windows. 
+Para especificar el nombre de usuario usaremos &rarr; ```smbmount //host/nombredelrecurso /mnt/samba -o username=<usuario>```
 
 ```smbumount /mnt/samba``` Desmontara el recurso compartido que habíamos montado en /mnt/samba. Hay que hacerlo antes de apagar el ordenador windows, ya que si no saldrán mensajes de error.
 
 ```nmblookup <host>``` Nos devuelve la Ip del <host> presente en la red.
 
-```nbtscan <red/mascara>``` Nos escaneara la red en busca de equipos que comparten recursos. Por ejemplo: ```nbtscan 192.168.0.0/24``` nos escanearía la red en busca de equipos.
+```nbtscan <red/mascara>``` Nos escaneara la red en busca de equipos que comparten recursos.
+
+ Por ejemplo: ```nbtscan 192.168.0.0/24``` nos escanearía la red en busca de equipos.
+
 ```smbstatus``` Nos permite ver quien está conectado al servidor Samba.
 
