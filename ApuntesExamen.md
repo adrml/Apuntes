@@ -554,6 +554,15 @@ Para resolver el error al reiniciar el proceso **samba-ad-dc** hay que ejecutar 
 ```
 ***https://estamosrodeados.com/linux/samba4-como-ad-dc/***
 
+## Conectar el cliente Ubuntu al AD DC
+
+Primero instalamos los siguientes servicios.
+
+```
+	apt -y install winbind libpam-winbind libnss-winbind krb5-config resolvconf
+```
+
+
 ## SAMBA
 
 Samba es una implementación libre del protocolo **SMB** *Server Message Protocol* , utiliza el puerto 445 (TCP y UDP)
