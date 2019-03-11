@@ -14,7 +14,7 @@
 		6.1 [Errores] (### Errores)
 
 
-##  SSH <a name="SSH"></a>
+##SSH <a name="SSH"></a>
 
 El servicio OpenSSH (**sshd**)  usa por defecto el puerto **22/TCP**.
 
