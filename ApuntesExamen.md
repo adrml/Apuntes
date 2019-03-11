@@ -399,7 +399,11 @@ Ejemplo de arbol de directorios para LDAP:
 
 ![Arbol de directorios](https://www.researchgate.net/profile/Ramon_Anglada_Martinez/publication/262512581/figure/fig1/AS:478136199585792@1491007961309/Figura-1-Ejemplo-de-Arbol-de-Directorio-LDAP-tomada-de-11-OpenLdap-es-una-de-las.png)
 
+Documentacion ubuntu:
 ***https://help.ubuntu.com/lts/serverguide/openldap-server.html.en***
+
+conf cliente:
+***https://www.tecmint.com/configure-ldap-client-to-connect-external-authentication/***
 
 **DN:** Cada entrada tiene un atributo especial llamado distinguished
 name o nombre distinguido (DN), que lo identifica unívocamente en la base de
@@ -552,6 +556,60 @@ Para resolver el error al reiniciar el proceso **samba-ad-dc** hay que ejecutar 
 ```
 ***https://estamosrodeados.com/linux/samba4-como-ad-dc/***
 
+
+## Conectar el cliente Ubuntu al AD DC
+
+Primero instalamos los siguientes servicios.
+
+```
+apt -y install winbind libpam-winbind libnss-winbind krb5-config resolvconf
+```
+
+Añadiremos lo siguiente al fichero /etc/samba/smb.conf
+
+```
+   workgroup = FD3S01
+   password server = fd3s.srv.world
+   realm = SRV.WORLD
+   security = ads
+   idmap config * : range = 16777216-33554431
+   template homedir = /home/%U
+   template shell = /bin/bash
+   winbind use default domain = true
+   winbind offline logon = false
+   winbind rpc only = yes
+
+```
+También el fichero /etc/nsswitch.conf
+```
+passwd:     compat winbind
+group:     compat winbind
+shadow:     compat winbind
+
+```
+Y por último el fichero /etc/pam.d/common-session
+```
+session optional        pam_mkhomedir.so skel=/etc/skel umask=077
+```
+Para acceder al active directory
+```
+net ads join -U Administrator **(en caso de tenerlo en castellano serà Administrador)**
+```
+Para comprobar que funciona hacemos:
+```
+service winbind restart
+
+wbinfo -u
+```
+Con el anterior comando veremos un listado de los usuarios que tenemos en el AD DC, si salen los usuarios quiere decir que funciona, si no sale nada quiere decir que no se ha unido bien.
+
+Si todo ha salido bien podremos acceder con un usuario de nuestro active directory, en este caso yo he usado el usuario “pollo”.
+```
+su pollo
+```
+***https://www.server-world.info/en/note?os=Debian_9&p=samba&f=3***
+
+
 ## SAMBA
 
 Samba es una implementación libre del protocolo **SMB** *Server Message Protocol* , utiliza el puerto 445 (TCP y UDP)
@@ -619,13 +677,9 @@ También podemos utilizar la **línea de comandos** de la siguiente manera
 
 ```smbclient -L <host>``` Nos muestra los recursos compartidos en el equipo. Podemos especificar el usuario (la contraseña la preguntará) con ```smbclient -L <host> -U <usuario>```
 
-```smbmount //host/nombredelrecurso /mnt/samba``` &rarr; Nos montara el recurso compartido llamado nombredelrecurso en el directorio /mnt/samba. 
-Antes de hacer esto, el directorio /mnt/samba debe existir.
+para montar el directorio en tu maquina
 
-Una vez montado podremos navegar por **/mnt/samba** como si fuera el directorio compartido de windows. 
-Para especificar el nombre de usuario usaremos &rarr; ```smbmount //host/nombredelrecurso /mnt/samba -o username=<usuario>```
-
-```smbumount /mnt/samba``` Desmontara el recurso compartido que habíamos montado en /mnt/samba. Hay que hacerlo antes de apagar el ordenador windows, ya que si no saldrán mensajes de error.
+```mount.cifs //ip/share /mnt```
 
 ```nmblookup <host>``` Nos devuelve la Ip del <host> presente en la red.
 
