@@ -608,7 +608,9 @@ Para acceder a los recursos compartidos por Windows, si usamos Konqueror o Nauti
 De todos modos, disponemos también de **herramientas gráficas** que van muy bien y hacen esta tarea tan sencilla como navegar por directorios. Algunas de ellas son:
 
 > komba
+
 > smb4k
+
 > xfsamba
 
 También podemos utilizar la **línea de comandos** de la siguiente manera
