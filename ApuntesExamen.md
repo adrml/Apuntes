@@ -397,7 +397,11 @@ Ejemplo de arbol de directorios para LDAP:
 
 ![Arbol de directorios](https://www.researchgate.net/profile/Ramon_Anglada_Martinez/publication/262512581/figure/fig1/AS:478136199585792@1491007961309/Figura-1-Ejemplo-de-Arbol-de-Directorio-LDAP-tomada-de-11-OpenLdap-es-una-de-las.png)
 
+Documentacion ubuntu:
 ***https://help.ubuntu.com/lts/serverguide/openldap-server.html.en***
+
+conf cliente:
+***https://www.tecmint.com/configure-ldap-client-to-connect-external-authentication/***
 
 **DN:** Cada entrada tiene un atributo especial llamado distinguished
 name o nombre distinguido (DN), que lo identifica unívocamente en la base de
