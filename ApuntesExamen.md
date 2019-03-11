@@ -675,13 +675,9 @@ También podemos utilizar la **línea de comandos** de la siguiente manera
 
 ```smbclient -L <host>``` Nos muestra los recursos compartidos en el equipo. Podemos especificar el usuario (la contraseña la preguntará) con ```smbclient -L <host> -U <usuario>```
 
-```smbmount //host/nombredelrecurso /mnt/samba``` &rarr; Nos montara el recurso compartido llamado nombredelrecurso en el directorio /mnt/samba. 
-Antes de hacer esto, el directorio /mnt/samba debe existir.
+para montar el directorio en tu maquina
 
-Una vez montado podremos navegar por **/mnt/samba** como si fuera el directorio compartido de windows. 
-Para especificar el nombre de usuario usaremos &rarr; ```smbmount //host/nombredelrecurso /mnt/samba -o username=<usuario>```
-
-```smbumount /mnt/samba``` Desmontara el recurso compartido que habíamos montado en /mnt/samba. Hay que hacerlo antes de apagar el ordenador windows, ya que si no saldrán mensajes de error.
+```mount.cifs //ip/share /mnt```
 
 ```nmblookup <host>``` Nos devuelve la Ip del <host> presente en la red.
 
