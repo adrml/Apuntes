@@ -702,6 +702,6 @@ para montar el directorio en tu maquina
 
 [Documentacion ubuntu ldap](https://help.ubuntu.com/lts/serverguide/openldap-server.html.en)
 
-[conf cliente ubuntu](https://www.tecmint.com/configure-ldap-client-to-connect-external-authentication/)
+[Conf cliente ubuntu](https://www.tecmint.com/configure-ldap-client-to-connect-external-authentication/)
 
-[samba con ad dc](https://estamosrodeados.com/linux/samba4-como-ad-dc/)
+[Samba con ad dc](https://estamosrodeados.com/linux/samba4-como-ad-dc/)
