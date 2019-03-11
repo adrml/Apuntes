@@ -21,6 +21,10 @@
 6.1. [Errores](#Errores)
 
 
+7. [SAMBARecursos](#SAMBA)
+
+7.1 [AccederARecursos](#AccederARecursos)
+
 ## SSH <a name="SSH"></a>
 
 El servicio OpenSSH (**sshd**)  usa por defecto el puerto **22/TCP**.
@@ -542,6 +546,77 @@ Para resolver el error al reiniciar el proceso **samba-ad-dc** hay que ejecutar 
     sudo systemctl restart samba-ad-dc
 ```
 
+## SAMBA
 
+Samba es una implementación libre del protocolo **SMB** *Server Message Protocol* , utiliza el puerto 445 (TCP y UDP)
 
+La configuración de Samba se logra editando un solo archivo ubicado en ``/etc/samba/smb.conf``, un ejemplo de una configuración básica:
+```
+	#============== Global Settings ===================#
+	[global]
+	 workgroup = PRUEBAGROUP
+	 server string = Samba %v
+	 wins support = no
+	 load printers = no
+
+	#======= Seguridad =======#
+	 security = user
+	 map to guest = bad user
+	 guest ok = yes
+	 public = yes
+	 hosts allow = 127.0.0.1 192.168.22.0/24
+	 hosts deny = 0.0.0.0/0
+
+	#============== Share Definitions ==================#
+	[Musica]
+	 comment = Música prueba.
+	 path = /home/Datos/Musica/
+	 available = yes
+	 browsable = yes
+	 writable = no
+
+	[Videos]
+	 copy = Musica
+	 comment = Videos prueba.
+	 path = /home/Datos/Videos/
+
+	[Box]
+	 copy = Musica
+	 comment = Otros datos.
+	 path = /home/Datos/Box/
+	 writable = yes
+```
+### AccederARecursos <a name="AccederARecursos"></a>
+
+Tanto desde Windows como desde Linux se puede acceder de forma muy sencilla.
+
+**Accedo desde Windows a Linux**
+
+Desde Windows podemos acceder a los recursos compartidos en la máquina Linux simplemente utilizando el Entorno de Red y navegando por los recursos que encontremos.
+
+**Acceso desde Linux a Windows**
+
+Para acceder a los recursos compartidos por Windows, si usamos Konqueror o Nautils, es tan simple como escribir en al barra de direcciones:
+```
+    smb://nombre_maquina_windows
+```
+
+De todos modos, disponemos también de **herramientas gráficas** que van muy bien y hacen esta tarea tan sencilla como navegar por directorios. Algunas de ellas son:
+
+    **komba**
+    **smb4k**
+    **xfsamba**
+
+También podemos utilizar la **línea de comandos** de la siguiente manera:
+
+    **smbclient -L <host>** Nos muestra los recursos compartidos en el equipo <host>. Podemos especificar el usuario (la contraseña la preguntará) con smbclient -L <host> -U <usuario>
+
+    **smbmount //host/nombredelrecurso /mnt/samba** Nos montara el recurso compartido llamado nombredelrecurso en el directorio /mnt/samba. Antes de hacer esto, el directorio /mnt/samba debe existir. Una vez montado podremos navegar por /mnt/samba como si fuera el directorio compartido de windows. Para especificar el nombre de usuario usaremos: smbmount //host/nombredelrecurso /mnt/samba -o username=<usuario>
+
+    **smbumount /mnt/samba** Desmontara el recurso compartido que habíamos montado en /mnt/samba. Hay que hacerlo antes de apagar el ordenador windows, ya que si no saldrán mensajes de error.
+
+    **nmblookup <host>** Nos devuelve la Ip del <host> presente en la red.
+
+    **nbtscan <red/mascara>** Nos escaneara la red en busca de equipos que comparten recursos. Por ejemplo: nbtscan 192.168.0.0/24 nos escanearía la red en busca de equipos.
+    smbstatus Nos permite ver quien está conectado al servidor Samba.
 
