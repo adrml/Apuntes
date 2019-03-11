@@ -6,7 +6,7 @@
 3. [RDP](#RDP)
 4. [Servidores de impresion](#Servidores de impresión)
 
-4.1 [LDP](#LDP,sistema de impresión Berkeley)
+4.1 [LDP](#LDP)
 
 4.2 [CUPS](#CUPS)
 
@@ -14,7 +14,7 @@
 
 5. [LDAP](#LDAP)
 
-5.1 [Configuración en el servidor](#Configuración en el servidor)
+5.1 [Config en el servidor](#Config en el servidor)
 
 6. [SAMBA 4 como AD DC](#SAMBA 4 como AD DC)
 
@@ -110,8 +110,9 @@ Se puede acceder a este servicio desde cualquier Windows, Apple, Android, tablet
 ___
 ##  Servidores de impresión
 
-### LPD, sistema de impresión Berkeley
+### LPD 
 
+_**sistema de impresión Berkeley**
 Gestor tradicional de UNIX de la plataforma UNIX BSD, controlado por el demonio de impresoras de linea(Line printer daemon).
 
 Utiliza el protocolo **LPD/LPR** donde los clientes se comunican con el demonio mediante el dispositivo /dev/printer y utilizando el archivo de configuración **/etc/printcap** que determina el directorip de la cola de trabajos de impresión
@@ -278,7 +279,7 @@ segons algun dels quatre models següents:
     no autoritzats.
 ```
 
-### Configuración en el servidor
+### Config en el servidor
 
 1. Instalamos el servicio SLAPD en el servidor, junto con las utilidades ldap
 ```
