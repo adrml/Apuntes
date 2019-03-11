@@ -6,7 +6,7 @@
 3. [RDP](#RDP)
 4. [Servidores de impresion](#ServidoresImpresion)
 
-4.1. [LPD](#LPD)
+ 4.1. [LPD](#LPD)
 
 4.2. [CUPS](#CUPS)
 
