@@ -289,7 +289,8 @@ segons algun dels quatre models següents:
 
 1. Instalamos el servicio SLAPD en el servidor, junto con las utilidades ldap
 ```
-	sudo apt install slapd ldap-utils	
+	sudo apt install slapd ldap-utils
+	dpkg-reconfigure slapd
 ```
 2. Configuramos usuarios y grupos
 	
