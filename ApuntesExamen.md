@@ -288,6 +288,7 @@ segons algun dels quatre models següents:
     continguda en el directori LDAP davant d’intents d’accés
     no autoritzats.
 ```
+***https://help.ubuntu.com/lts/serverguide/openldap-server.html.en***
 
 ### ConfigServidor   <a name="ConfigServidor"></a>
 
@@ -546,6 +547,7 @@ Para resolver el error al reiniciar el proceso **samba-ad-dc** hay que ejecutar 
 
     sudo systemctl restart samba-ad-dc
 ```
+***https://estamosrodeados.com/linux/samba4-como-ad-dc/***
 
 ## SAMBA
 
