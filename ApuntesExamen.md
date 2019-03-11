@@ -4,9 +4,9 @@
 1. [SSH](#SSH)
 2. [Telnet](#TELNET)
 3. [RDP](#RDP)
-4. [Servidores de impresion](#Servidores de impresión)
+4. [Servidores de impresion](#Servidores de impresion)
 
-4.1. [LDP](#LDP)
+4.1. [LPD](#LPD)
 
 4.2. [CUPS](#CUPS)
 
@@ -14,7 +14,7 @@
 
 5. [LDAP](#LDAP)
 
-5.1. [Config en el servidor](#Config servidor)
+5.1. [Config servidor](#Config servidor)
 
 6. [SAMBA 4 como AD DC](#SAMBA 4 ADDC)
 
@@ -108,7 +108,7 @@ El Servicio RDP (**RemoteDesktopProtocol**)
 RPD es un protocolo diseñado por Windows que permite acceder a un escritorio remoto desde un punto distante, incluso dentro de nuestra propia red, formando un entorno cliente-servidor.
 Se puede acceder a este servicio desde cualquier Windows, Apple, Android, tableta o móvil.
 ___
-##  Servidores de impresión <a name="Servidores de impresión"></a>
+##  Servidores de impresion <a name="Servidores de impresión"></a>
 
 ### LPD 
 
