@@ -173,6 +173,12 @@ https://localhost|serverip:631/admin
 ```
 ## Comandos<a name="Comandos"></a>
 
+- Imprimir
+
+```
+$ lp archivo
+```
+
 - Listar dispositivos
 
 ```
@@ -186,7 +192,7 @@ $ lpinfo -m
 - Establecer impresora predeterminada
 
 ```
-$ poptions -d <printer>
+$ lpoptions -d <printer>
 ```
 
 - Comprobar el estado
