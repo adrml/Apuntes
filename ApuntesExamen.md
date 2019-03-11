@@ -691,11 +691,20 @@ para montar el directorio en tu maquina
 
 ## Documentación
 
-Impresiín y remoto
+Impresion y remoto ioc
 https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=126708
 
-Samba
+Samba ioc
 https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133910
 
-Ldap
+Ldap ioc
 https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133911
+
+Documentacion ubuntu ldap:
+https://help.ubuntu.com/lts/serverguide/openldap-server.html.en
+
+conf cliente ubuntu:
+https://www.tecmint.com/configure-ldap-client-to-connect-external-authentication/
+
+samba con ad dc:
+https://estamosrodeados.com/linux/samba4-como-ad-dc/
