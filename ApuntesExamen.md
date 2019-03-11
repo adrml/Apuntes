@@ -6,19 +6,19 @@
 3. [RDP](#RDP)
 4. [Servidores de impresion](#Servidores de impresión)
 
-4.1 [LDP](#LDP)
+4.1. [LDP](#LDP)
 
-4.2 [CUPS](#CUPS)
+4.2. [CUPS](#CUPS)
 
-4.2.1 [Comandos gestion](#Comandos gestion)
+4.2.1. [Comandos gestion](#Comandos gestion)
 
 5. [LDAP](#LDAP)
 
-5.1 [Config en el servidor](#Config servidor)
+5.1. [Config en el servidor](#Config servidor)
 
 6. [SAMBA 4 como AD DC](#SAMBA 4 ADDC)
 
-6.1 [Errores](#Errores)
+6.1. [Errores](#Errores)
 
 
 ## SSH <a name="SSH"></a>
