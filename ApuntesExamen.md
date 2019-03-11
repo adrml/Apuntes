@@ -703,22 +703,15 @@ Samba
 
 Ldap
 [ApuntesJoanDaustria_p5](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133912)
-=======
-Impresion y remoto ioc
-https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=126708
 
-Samba ioc
-https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133910
+[Impresion y remoto ioc](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=126708)
 
-Ldap ioc
-https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133911
+[Samba ioc](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133910)
 
-Documentacion ubuntu ldap:
-https://help.ubuntu.com/lts/serverguide/openldap-server.html.en
+[Ldap ioc](https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133911)
 
-conf cliente ubuntu:
-https://www.tecmint.com/configure-ldap-client-to-connect-external-authentication/
+[Documentacion ubuntu ldap:](https://help.ubuntu.com/lts/serverguide/openldap-server.html.en)
 
-samba con ad dc:
-https://estamosrodeados.com/linux/samba4-como-ad-dc/
->>>>>>> 0c6a9247fa474830391641bf333ac5269a40c116
+[conf cliente ubuntu:](https://www.tecmint.com/configure-ldap-client-to-connect-external-authentication/)
+
+[samba con ad dc:](https://estamosrodeados.com/linux/samba4-como-ad-dc/)
