@@ -10,7 +10,7 @@
 
 4.2. [CUPS](#CUPS)
 
-4.2.1. [Comandos gestion](#Comandos gestion)
+4.2.1. [Comandos](#Comandos)
 
 5. [LDAP](#LDAP)
 
@@ -171,7 +171,7 @@ https://localhost|serverip:631/admin
 ```
 /etc/cups/mime.convs o /usr/share/cups/mime/mime.convs) define cual o que filtros estan disponibles para convertir archivos de un formato a otro.
 ```
-## Comandos gestion 
+## Comandos<a name="Comandos"></a>
 
 - Listar dispositivos
 
