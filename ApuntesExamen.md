@@ -3,21 +3,21 @@
 # Indice 
 1. [SSH](#SSH)
 2. [Telnet](#TELNET)
-3. [RDP] (#RDP)
-4. [Servidores de impresion] (#Servidores de impresión)
+3. [RDP](#RDP)
+4. [Servidores de impresion](#Servidores de impresión)
 
-	4.1 [LDP] (#LDP,sistema de impresión Berkeley)
+	4.1 [LDP](#LDP,sistema de impresión Berkeley)
 
-	4.2 [CUPS] (#CUPS)
+	4.2 [CUPS](#CUPS)
 
-		4.2.1 [Comandos para la gestión de la impresora] (##CUPS)
+		4.2.1 [Comandos para la gestión de la impresora](#Comandos para la gestión de la impresora)
 5. [LDAP](#LDAP)
 
-		5.1 [Configuración en el servidor] (##Configuración en el servidor)
+		5.1 [Configuración en el servidor](#Configuración en el servidor)
 
-6. [SAMBA 4 como AD DC] (#SAMBA 4 como AD DC)
+6. [SAMBA 4 como AD DC](#SAMBA 4 como AD DC)
 
-		6.1 [Errores] (##Errores)
+		6.1 [Errores](#Errores)
 
 
 ## SSH <a name="SSH"></a>
