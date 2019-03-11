@@ -10,13 +10,13 @@
 
 4.2 [CUPS](#CUPS)
 
-4.2.1 [Comandos gestion ](#Comandos gestión)
+4.2.1 [Comandos gestion](#Comandos gestion)
 
 5. [LDAP](#LDAP)
 
-5.1 [Config en el servidor](#Config en el servidor)
+5.1 [Config en el servidor](#Config servidor)
 
-6. [SAMBA 4 como AD DC](#SAMBA 4 como AD DC)
+6. [SAMBA 4 como AD DC](#SAMBA 4 ADDC)
 
 6.1 [Errores](#Errores)
 
@@ -279,7 +279,7 @@ segons algun dels quatre models següents:
     no autoritzats.
 ```
 
-### Config en el servidor
+### Config servidor
 
 1. Instalamos el servicio SLAPD en el servidor, junto con las utilidades ldap
 ```
@@ -391,7 +391,7 @@ name o nombre distinguido (DN), que lo identifica unívocamente en la base de
 datos del directorio. Por tanto, puede decirse que el DN se utiliza para referirse a
 una entrada sin ambigüedades. Es el identificador único de un atributo.
 
-### SAMBA 4 como AD DC
+### SAMBA 4 ADDC
 
 En este post explicaré como utilizar samba como AD (active directory) y DC (domain controller).
 
