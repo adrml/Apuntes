@@ -689,3 +689,13 @@ para montar el directorio en tu maquina
 
 ```smbstatus``` Nos permite ver quien está conectado al servidor Samba.
 
+## Documentación
+
+Impresiín y remoto
+https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=126708
+
+Samba
+https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133910
+
+Ldap
+https://agora.xtec.cat/insjoandaustria/moodle/mod/resource/view.php?id=133911
